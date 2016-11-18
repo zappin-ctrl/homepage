@@ -1,5 +1,5 @@
 function date(id) {
-  date = new Date;
+  var date = new Date;
   d = date.getDate();
   year = date.getFullYear();
   month = date.getMonth();
@@ -11,7 +11,7 @@ function date(id) {
 }
 
 function time(id) {
-  date = new Date;
+  var date = new Date;
   h = date.getHours();
     if(h<10) {
       h = "0"+h;
