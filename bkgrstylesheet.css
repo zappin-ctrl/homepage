@@ -4,7 +4,7 @@ html {
   background-repeat: no-repeat;
   background-attachment: scroll;
   /*general*/
-  background-size:cover;
+  background-size:cover !important;
     /*Other browsers*/
   -webkit-background-size: cover !important;
   -ms-background-size: cover !important;
