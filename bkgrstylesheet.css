@@ -4,5 +4,5 @@ html {
   background-repeat: no-repeat;
   background-attachment: scroll;
   /*background-size : cover;*/
-  background-size: auto auto / cover;
+  background-size: 500% 500% / cover;
 }
