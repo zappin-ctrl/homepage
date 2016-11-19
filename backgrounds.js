@@ -13,5 +13,4 @@ function randomBackground() {
     style.backgroundRepeat = "no-repeat";
     style.backgroundAttachment = "scroll";
     style.mozBackgroundSize = "0% 0% / cover";*/
-style.backgroundSize = "cover";
 }
