@@ -4,9 +4,11 @@ function randomBackground() {
       Files must be .jpg and names background[NUMBER].jpg
     */
     var randomNumber = Math.floor(Math.random() * 8) + 1;
-    $('body').css({
-        'background' : 'url(\'images/background'+randomNumber+'.jpg\')',
-        'background-repeat' : 'no-repeat',
-        'background-size' : 'cover'
-    });
+    var htmlElement = document.getElementById("main");
+    var style = htmlElement.style;
+    style.backgroundColor = "transparent";
+    style.backgroundImage = "url(\"/images/background"+randomNumber+".jpg\")";
+    style.backgroundRepeat = "no-repeat";
+    style.backgroundAttachment = "scroll";
+    style.backgroundSize = "0% 0% / cover";
 }
