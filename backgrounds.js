@@ -10,5 +10,6 @@ function randomBackground() {
     style.backgroundImage = "url(\"https://source.unsplash.com/random/1920x1080\")";
     style.backgroundRepeat = "no-repeat";
     style.backgroundAttachment = "scroll";
-    style.backgroundSize = "0% 0% / cover";
+    style.mozBackgroundSize = "0% 0% / cover";
+style.backgroundSize = "cover";
 }
