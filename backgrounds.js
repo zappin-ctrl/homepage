@@ -7,7 +7,7 @@ function randomBackground() {
     var htmlElement = document.getElementById("main");
     var style = htmlElement.style;
     style.backgroundColor = "transparent";
-    style.backgroundImage = "url(\"/images/background"+randomNumber+".jpg\")";
+    style.backgroundImage = "url(\"images/background"+randomNumber+".jpg\")";
     style.backgroundRepeat = "no-repeat";
     style.backgroundAttachment = "scroll";
     style.backgroundSize = "0% 0% / cover";
