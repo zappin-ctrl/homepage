@@ -8,4 +8,7 @@ body {
   /*Other browsers*/
   -webkit-background-size: cover;
   -ms-background-size: cover;
+  -o-background-size:cover;
+  /*general*/
+  background-size:cover;
 }
