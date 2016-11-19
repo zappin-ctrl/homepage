@@ -3,5 +3,5 @@ html {
   /*background-image: url("https://source.unsplash.com/random/1920x1080");*/
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size : cover;
+  background-size : 100% 100% / cover;
 }
