@@ -4,5 +4,5 @@ body#main {
   background-repeat: no-repeat;
   background-attachment: scroll;
   /*background-size : cover;*/
-  background-size: 500% 500% / cover;
+  background-size: cover;
 }
