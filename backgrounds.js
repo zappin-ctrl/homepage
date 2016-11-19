@@ -7,7 +7,7 @@ function randomBackground() {
     var randomNumber = Math.floor(Math.random() * 8) + 1;
     var htmlElement = document.getElementById("main");
     var style = htmlElement.style;
-    style.backgroundImage = "url(\"/images/background"+randomNumber+".jpg\")"/*
+    style.backgroundImage = "url(\"./images/background"+randomNumber+".jpg\")"/*
     style.backgroundColor = "transparent";
     style.backgroundImage = "url(\"https://source.unsplash.com/random/1920x1080\")";
     style.backgroundRepeat = "no-repeat";
