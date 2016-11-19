@@ -6,6 +6,6 @@ html {
       /* Firefox*/
   -moz-background-size: 0% 0% / cover !important;
   /*general*/
-  background-size:cover !important;
+  /*background-size:cover !important;*/
 
 }
