@@ -3,12 +3,12 @@ body {
   background-image: url("https://source.unsplash.com/random/1920x1080");
   background-repeat: no-repeat;
   background-attachment: scroll;
-  /* Firefox*/
-  -moz-background-size: 0% 0% / cover !important;
-  /*Other browsers*/
+  /*general*/
+  background-size:cover;
+    /*Other browsers*/
   -webkit-background-size: cover !important;
   -ms-background-size: cover !important;
   -o-background-size:cover !important;
-  /*general*/
-  background-size:cover;
+    /* Firefox*/
+  -moz-background-size: 0% 0% / cover !important;
 }
