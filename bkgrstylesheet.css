@@ -4,7 +4,7 @@ html {
   background-repeat: no-repeat;
   background-attachment: scroll;
       /* Firefox*/
-  -moz-background-size: 0% 0% / cover !important;
+  -moz-background-size: cover !important;
   /*general*/
   /*background-size:cover !important;*/
 
