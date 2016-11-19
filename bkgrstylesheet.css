@@ -4,11 +4,11 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   /* Firefox*/
-  -moz-background-size: 0% 0% / cover;
+  -moz-background-size: 0% 0% / cover !important;
   /*Other browsers*/
-  -webkit-background-size: cover;
-  -ms-background-size: cover;
-  -o-background-size:cover;
+  -webkit-background-size: cover !important;
+  -ms-background-size: cover !important;
+  -o-background-size:cover !important;
   /*general*/
   background-size:cover;
 }
