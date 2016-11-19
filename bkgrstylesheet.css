@@ -3,6 +3,9 @@ body {
   background-image: url("https://source.unsplash.com/random/1920x1080");
   background-repeat: no-repeat;
   background-attachment: scroll;
+  /* Firefox*/
   -moz-background-size: 0% 0% / cover;
-  background-size: cover;
+  /*Other browsers*/
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
 }
