@@ -13,6 +13,7 @@ function updateDateAndTime () {
 }
 
 // Start updating
+moment.lang(navigator.language);
 updateDateAndTime();
 
 /**
