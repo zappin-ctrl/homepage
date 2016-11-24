@@ -7,3 +7,6 @@ Please do not claim this as your own website when downloading or forking this, k
 
 ### Adding backgrounds
 Currently, you just have to add into the images folder a file called **background[NUMBER].jpg** and edit **backgrounds.js** with the amount of backgrounds you have. It might seem weird, but it's just a temporarily solution
+
+### Credits
+https://github.com/TTtie | **Fixing Firefox compatibility**
