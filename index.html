@@ -1,42 +1,37 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="theme-color" content="#2196F3">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#2196F3">
+  <title>Clean time-page</title>
 
-    <title>Clean time-page</title>
+  <meta content="https://avatars0.githubusercontent.com/u/19587382?v=3&amp;s=400" property="og:image" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta content="Time and Date website" property="og:title" />
+  <meta content="That one website you can have as a homepage because of reasons :3" property="og:description" />
 
-    <meta content="https://avatars0.githubusercontent.com/u/19587382?v=3&amp;s=400" property="og:image" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta content="Time and Date website" property="og:title" />
-    <meta content="That one website you can have as a homepage because of reasons :3" property="og:description" />
+  <!-- stylesheets -->
+  <link href="assets/styles.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="time.js"></script>
-    <script src="backgrounds.js"></script>
-    <link href="main.css" type="text/css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="bkgrstylesheet.css" type="text/css" rel="stylesheet">
-  </head>
+<body>
+  <img id="js-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
 
-  <body>
-    <div id = main>
+  <div class="cover">
     <div class="center_page">
-      <span class="time text-effect" id="time"></span>
-        <br>
-      <span class="time text-effect" id="date"></span>
+      <span class="time text-effect" id="js-time"></span><br />
+      <span class="time text-effect" id="js-date"></span>
     </div>
-    <div class="credits text-effect box">
+
+    <div class="credits">
       Created by <a href="https://github.com/AlexFlipnote">AlexFlipnote</a>
     </div>
-    </div>
-  </body>
+  </div>
 
-  <!-- shit code, I know ;-; -->
-  <script type="text/javascript">
-    window.onload = date('date');
-    window.onload = time('time');
-    window.onload = randomBackground();
-  </script>
-
+  <!-- scripts -->
+  <script src="assets/moment-with-locales.min.js"></script>
+  <script src="assets/script.js"></script>
+</body>
 </html>
