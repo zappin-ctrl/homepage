@@ -1,5 +1,5 @@
 # Time and Date website
-https://alexflipnote.github.io/homepage
+http://alexflipnote.xyz/homepage
 
 This website was made because of a request, so why not share it as well to the public
 
