@@ -11,7 +11,7 @@ public.
    see it
 
 ### Credits
-- @alexflipnote: main developer
+- @AlexFlipnote: main developer
 - @TTtie: improved Firefox compatibility
 - @deansheather: added localization support, improved code, and added fadein
   onload for background image
