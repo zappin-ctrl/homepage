@@ -45,7 +45,7 @@ function handleViewportResize () {
 
 // Set background to a random one
 var backgroundElement = document.getElementById('js-bg');
-var selected = Math.floor(Math.random() * 8);
+var selected = Math.floor(Math.random() * 12);
 backgroundElement.onload = function () {
   var d = getViewportDimensions();
   if ((d.w / d.h) < (backgroundElement.width / backgroundElement.height)) {
@@ -58,8 +58,7 @@ backgroundElement.onload = function () {
   backgroundElement.style.opacity = 1;
 }
 // Will open this later
-//backgroundElement.src = 'assets/backgrounds/background' + selected + '.jpg';
-backgroundElement.src = 'assets/backgrounds/background1.jpg';
+backgroundElement.src = 'assets/backgrounds/background' + selected + '.jpg';
 
 // Attach listener to update background width and height based on viewport size
 // changes
