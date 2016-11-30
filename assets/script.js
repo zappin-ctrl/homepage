@@ -1,44 +1,19 @@
 /**
  * Update the displayed date and time on the page.
  */
-var coverMode = 0;
-var timeElems = {};
 function updateDateAndTime () {
   var dateString = moment().format('LL'),
       timeString = moment().format('LTS');
 
-  // Do fades between the frames
-  if(document.getElementById(`js-time-${coverMode}`).innerText != timeString && coverMode == 0){
-    document.getElementById(`cover-${coverMode}`).style['z-index'] = 2;
-    $(`#cover-${coverMode}`).fadeOut();
-    coverMode = 1;
-    document.getElementById(`cover-${coverMode}`).style['z-index'] = 1;
-    $(`#cover-${coverMode}`).fadeIn(100);
-  }else if(document.getElementById(`js-time-${coverMode}`).innerText != timeString && coverMode == 1){
-    document.getElementById(`cover-${coverMode}`).style['z-index'] = 2;
-    $(`#cover-${coverMode}`).fadeOut();
-    coverMode = 0;
-    document.getElementById(`cover-${coverMode}`).style['z-index'] = 1;
-    $(`#cover-${coverMode}`).fadeIn(100);
-  }
-
-  document.getElementById(`js-date-${coverMode}`).innerText = dateString;
-  document.getElementById(`js-time-${coverMode}`).innerText = timeString;
+  document.getElementById('js-date').innerText = dateString;
+  document.getElementById('js-time').innerText = timeString;
 
   // Request animation frame for next update
   requestAnimationFrame(updateDateAndTime);
 }
 
-var dateString = moment().format('LL'),
-    timeString = moment().format('LTS');
-
-document.getElementById(`js-date-0`).innerText = dateString;
-document.getElementById(`js-time-0`).innerText = timeString;
-document.getElementById(`js-date-1`).innerText = dateString;
-document.getElementById(`js-time-1`).innerText = timeString;
-
 // Start updating
-moment.locale(navigator.language);
+moment.lang(navigator.language);
 updateDateAndTime();
 
 /**
@@ -82,7 +57,9 @@ backgroundElement.onload = function () {
   }
   backgroundElement.style.opacity = 1;
 }
-backgroundElement.src = 'assets/backgrounds/background' + selected + '.jpg';
+// Will open this later
+//backgroundElement.src = 'assets/backgrounds/background' + selected + '.jpg';
+backgroundElement.src = 'assets/backgrounds/background1.jpg';
 
 // Attach listener to update background width and height based on viewport size
 // changes

@@ -10,10 +10,6 @@ html, body {
   background-color: #222;
 }
 
-#js-time-0, #js-time-1, #js-date-0, #js-date-1 {
-  white-space: nowrap;
-}
-
 #js-bg, .cover {
   position: fixed;
   top: 0; left: 0;
