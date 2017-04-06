@@ -30,20 +30,18 @@
 <body>
   <img id="js-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
 
-  <div class="cover">
-    <div class="center_page">
-      <span class="time text-effect" id="js-time"></span><br />
-      <span class="time text-effect" id="js-date"></span>
-      <hr>
-      <form method=GET action="http://www.google.com/search" autocomplete="off" class="form-box">
-        <input autofocus type=text name=q size=35 maxlength=255 value="" placeholder="Search on Google..."><input type=hidden name=hl value="en">
-      </form>
-    </div>
+  <section class="cover">
+    <div class="overlay">
+      <div class="center_page">
+        <span class="time" id="js-time"></span><br />
+        <span class="time" id="js-date"></span>
+      </div>
 
-    <div class="credits">
-      Created by <a href="https://github.com/AlexFlipnote">AlexFlipnote</a>
+      <div class="credits">
+        Created by <a href="https://github.com/AlexFlipnote" style="text-decoration: none; color: #14BAE4;">AlexFlipnote</a>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- scripts -->
   <script src="assets/moment-with-locales.min.js"></script>
