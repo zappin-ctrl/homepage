@@ -1,5 +1,5 @@
 # homepage (Clean time/date homepage)
-http://alexflipnote.xyz/homepage
+https://alexflipnote.xyz/homepage
 
 This website was made because of a request, so why not share it as well to the
 public.
