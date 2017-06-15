@@ -34,7 +34,7 @@ a {
 
 /* Background */
 .cover { min-height: 100%; height: 100%; width: 100%; background-color: rgba(27, 33, 51, .2); }
-.overlay { background: rgba(0, 0, 0, 0.7); mwidth: 100%; height: 100%; }
+.overlay { background: rgba(0, 0, 0, 0.5); mwidth: 100%; height: 100%; }
 .center_page {
   animation: enter-page 1s ease-in-out;
   width: 100%;
