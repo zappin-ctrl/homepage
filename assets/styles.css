@@ -10,11 +10,6 @@ html, body {
   background-color: #222;
 }
 
-a {
-  text-decoration: none;
-  color: #14BAE4;
-}
-
 /* Keyframes */
 @keyframes enter-page {
   from {
@@ -44,16 +39,11 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.credits {
-  padding: 10px;
-  position: absolute;
-  bottom: 0; right: 0;
-  background: rgba(0, 0, 0, .7);
-  border-radius: 10px 0px 0px 0px;
+.split_that_shit {
+  height: 2em;
 }
 
 /* Google Search */
-
 .form-box {
   padding-top: 1.3em;
 }

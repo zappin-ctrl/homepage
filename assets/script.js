@@ -23,7 +23,7 @@ function getQueryVariable(variable) {
 }
 
 // Start updating
-moment.lang(navigator.language);
+moment.lang(getQueryVariable("lang") || navigator.language);
 updateDateAndTime();
 
 /**
