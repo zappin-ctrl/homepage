@@ -48,18 +48,17 @@ html, body {
   padding-top: 1.3em;
 }
 
-input[type="text"], input[type="text"]:focus {
+input[type="text"], input[type="text"]:focus, input[type="text"]:focus::-webkit-input-placeholder {
   transition: all 500ms ease;
 }
 
 input[type="text"] {
   border: none;
-  border-radius: .65em;
   outline: none;
   font-size: 1.5em;
   padding: .5em;
   color: black;
-  background: white;
+  background: transparent;
   border-bottom: 2px solid rgba(255, 255, 255, .7);
   width: 10em;
 }
