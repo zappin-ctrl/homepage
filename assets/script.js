@@ -1,9 +1,9 @@
 /**
- * Update the displayed date and time on the page.
- */
+* Update the displayed date and time on the page.
+*/
 function updateDateAndTime () {
   var dateString = moment().format('LL'),
-      timeString = moment().format('LTS');
+  timeString = moment().format('LTS');
 
   document.getElementById('js-date').innerText = dateString;
   document.getElementById('js-time').innerText = timeString;
@@ -12,15 +12,25 @@ function updateDateAndTime () {
   requestAnimationFrame(updateDateAndTime);
 }
 
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+
 // Start updating
 moment.lang(navigator.language);
 updateDateAndTime();
 
 /**
- * Get viewport dimensions.
- * @return {Object} Object with w and h properties (containing width and height
- * of the viewport respectively).
- */
+* Get viewport dimensions.
+* @return {Object} Object with w and h properties (containing width and height
+* of the viewport respectively).
+*/
 function getViewportDimensions () {
   return {
     w: typeof window.innerWidth === 'number' ? window.innerWidth : document.documentElement && document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth,
@@ -29,9 +39,9 @@ function getViewportDimensions () {
 }
 
 /**
- * Update the background image height and width properties based on the ratio of
- * the viewport and the ratio of the image.
- */
+* Update the background image height and width properties based on the ratio of
+* the viewport and the ratio of the image.
+*/
 function handleViewportResize () {
   var d = getViewportDimensions();
   if ((d.w / d.h) < (backgroundElement.width / backgroundElement.height)) {
@@ -58,7 +68,7 @@ backgroundElement.onload = function () {
   backgroundElement.style.opacity = 1;
 }
 // Will open this later
-backgroundElement.src = 'assets/backgrounds/background' + selected + '.jpg';
+backgroundElement.src = getQueryVariable("bg") || 'assets/backgrounds/background' + selected + '.jpg';
 
 // Attach listener to update background width and height based on viewport size
 // changes
