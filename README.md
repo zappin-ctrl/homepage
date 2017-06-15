@@ -10,6 +10,16 @@ public.
 2. Bump the multiplier on line 47 of `assets/script.js` so the Javascript can
    see it
 
+### Using custom background on live version
+To do this, you simply add ?bg at the end of the URL and define the background you want.
+
+**Requirements**
+- HTTPS
+- Uploaded background
+
+Example:
+`https://alexflipnote.xyz/homepage/?bg=https://i.alexflipnote.xyz/fd20ed.jpg`
+
 ### Credits
 - @AlexFlipnote: main developer
 - @TTtie: improved Firefox compatibility
