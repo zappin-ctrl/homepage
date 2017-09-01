@@ -39,12 +39,9 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-.split_that_shit {
-  height: 2em;
-}
-
 /* Google Search */
 .form-box {
+  margin-top: 2em;
   padding-top: 1.3em;
 }
 
