@@ -23,7 +23,7 @@ function getQueryVariable(variable) {
 }
 
 // Start updating
-moment.lang(getQueryVariable("lang") || navigator.language);
+moment.locale(getQueryVariable("lang") || navigator.language);
 updateDateAndTime();
 
 /**
@@ -75,3 +75,12 @@ backgroundElement.src = getQueryVariable("bg") || 'assets/backgrounds/background
 if (window.addEventListener) window.addEventListener('resize', handleViewportResize, false);
 else if (window.attachEvent) window.attachEvent('onresize', handleViewportResize);
 else window.onresize = handleViewportResize;
+
+function getQuote () {
+  var quoteElement = document.getElementById('quote');
+  fetch("http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en")
+  .then(async (response) => {
+    data = await response.json();
+    quoteElement.innerHTML = '<i>"' + data.quoteText + '"</i><br>- ' + data.quoteAuthor;
+  });
+}
