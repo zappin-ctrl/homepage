@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
 
-  <body>
+  <body onload="getQuote()">
     <img id="js-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
 
     <section class="cover">
@@ -32,6 +32,7 @@
           <form method=GET action="http://www.google.com/search" autocomplete="off" class="form-box">
             <input autofocus type=text name=q size=35 maxlength=255 value="" placeholder="Search on Google..."><input type=hidden name=hl value="en">
           </form>
+          <p class="quote" id="quote">Loading quote...</p>
         </div>
       </div>
     </section>
