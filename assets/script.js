@@ -78,7 +78,7 @@ else window.onresize = handleViewportResize;
 
 function getQuote () {
   var quoteElement = document.getElementById('quote');
-  fetch("http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en")
+  fetch("https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en")
   .then(async (response) => {
     data = await response.json();
     quoteElement.innerHTML = '<i>"' + data.quoteText + '"</i><br>- ' + data.quoteAuthor;
