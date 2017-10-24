@@ -1,0 +1,33 @@
+@import '../assets/animation';
+@import '../assets/browser';
+
+.form-box {
+  margin-top: 2em;
+  padding-top: 1.3em;
+}
+
+input[type="text"], input[type="text"]:focus, input[type="text"]:focus::-webkit-input-placeholder {
+  @include transition('all 500ms ease');
+}
+
+input[type="text"] {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid rgba(255, 255, 255, .7);
+  color: #000;
+  font-size: 1.5em;
+  outline: none;
+  padding: .5em;
+  width: 10em;
+}
+
+input[type="text"]:focus {
+  background: transparent;
+  border-radius: 0;
+  width: 80%;
+}
+
+input[type="text"]:focus, input[type="text"]:focus::-webkit-input-placeholder {
+  @include crossbrowser(text-shadow, 1px 1px 10px #000);
+  color: rgba(255, 255, 255, .8);
+}

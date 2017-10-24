@@ -1,0 +1,52 @@
+@import '../assets/animation';
+
+@include keyframes(enter-page) {
+  from {
+    @include transform(translate(-50%, 40%));
+    opacity: 0;
+  }
+
+  100% {
+    @include transform(translate(-50%, -50%));
+    opacity: 1;
+  }
+}
+
+#js-bg, .cover {
+  left: 0;
+  position: fixed;
+  top: 0;
+}
+
+.cover {
+  background-color: rgba(27, 33, 51, .2);
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+
+  .overlay {
+    background: rgba(0, 0, 0, .5);
+    height: 100%;
+    width: 100%;
+
+    .center-page {
+      @include animation('enter-page 1s ease-in-out');
+      left: 50%;
+      padding: 0 50px;
+      position: fixed;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    #js-bg {
+      @include transition('opacity 500ms ease-out');
+      opacity: 0;
+    }
+
+    .time {
+      @include transition('all .5s ease');
+      font-size: 14vmin;
+    }
+  }
+}
