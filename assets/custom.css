@@ -11,27 +11,22 @@
   }
 }
 
-.center-object {
-  animation: enter-page 1s ease-in-out;
-}
+.center-object { animation: enter-page 1s ease-in-out; }
 
 /* Background */
 .fullscreen .center-object { position: fixed; }
 #js-bg {
-  transition: opacity 500ms ease-out;
-  opacity: 0;
-}
-
-#js-bg {
   left: 0;
   position: fixed;
   top: 0;
+  transition: opacity 500ms ease-out;
+  opacity: 0;
 }
 
 /* Clock */
 .time {
   transition: all .5s ease;
-  font-size: 12vmin;
+  font-size: 13vmin;
 }
 
 /* Input Box */
