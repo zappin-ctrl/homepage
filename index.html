@@ -27,22 +27,22 @@
     <meta content="A website that gives you a clean homepage with random backgrounds!" property="og:description" />
 
     <!-- stylesheets -->
-    <link href="assets/css/index.css" type="text/css" rel="stylesheet">
+    <link href="https://modesta.alexflipnote.xyz/css/modesta.min.css" type="text/css" rel="stylesheet">
+    <link href="assets/custom.css" type="text/css" rel="stylesheet">
     <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/apilabeffmpplallenlcommnigaafgfb">
   </head>
 
   <body>
-    <img id="js-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-
-    <section class="cover">
-      <div class="overlay">
-        <div class="center-page">
-          <span class="time" id="js-time"></span><br />
-          <span class="time" id="js-date"></span>
+    <section class="fullscreen">
+      <img class="background" id="js-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+      <div class="center-object">
+        <section class="me">
+          <h1 class="time" id="js-time"></h1>
+          <h1 class="time" id="js-date"></h1>
           <form method=GET action="http://www.google.com/search" autocomplete="off" class="form-box">
             <input autofocus type=text name=q size=35 maxlength=255 value="" placeholder="Search on Google..."><input type=hidden name=hl value="en">
           </form>
-        </div>
+        </section>
       </div>
     </section>
 

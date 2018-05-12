@@ -1,7 +1,9 @@
 /**
 * Update the displayed date and time on the page.
 */
-function updateDateAndTime () {
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+function updateDateAndTime() {
   var dateString = moment().format('LL'),
   timeString = moment().format('LTS');
 
@@ -59,11 +61,11 @@ var selected = Math.floor(Math.random() * 19);
 backgroundElement.onload = function () {
   var d = getViewportDimensions();
   if ((d.w / d.h) < (backgroundElement.width / backgroundElement.height)) {
-    backgroundElement.style.width = 'auto';
+    backgroundElement.style.width = '100%';
     backgroundElement.style.height = '100%';
   } else {
     backgroundElement.style.width = '100%';
-    backgroundElement.style.height = 'auto';
+    backgroundElement.style.height = '100%';
   }
   backgroundElement.style.opacity = 1;
 }
@@ -75,3 +77,14 @@ backgroundElement.src = getQueryVariable("bg") || 'assets/images/backgrounds/bac
 if (window.addEventListener) window.addEventListener('resize', handleViewportResize, false);
 else if (window.attachEvent) window.attachEvent('onresize', handleViewportResize);
 else window.onresize = handleViewportResize;
+
+/**
+* Remove add button if not a chrome user or already installed
+*/
+if (isChrome == false) {
+  document.getElementById('install-button').style.display = "none";
+}
+
+if (!window.location.href.includes("https://alexflipnote.xyz/homepage/")) {
+  document.getElementById('install-button').style.display = "none";
+}
