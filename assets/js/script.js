@@ -85,6 +85,6 @@ if (isChrome == false) {
   document.getElementById('install-button').style.display = "none";
 }
 
-if (!window.location.href.includes("https://alexflipnote.xyz/homepage/")) {
+if (!window.location.href.includes("alexflipnote.xyz/homepage")) {
   document.getElementById('install-button').style.display = "none";
 }
