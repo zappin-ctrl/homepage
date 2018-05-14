@@ -1,3 +1,9 @@
+/* Import font */
+@font-face {
+  font-family: "Lato";
+  src: url('Lato.ttf') format('truetype');
+}
+
 /* Animation */
 @keyframes enter-page {
   from {
@@ -25,9 +31,10 @@
 
 /* Clock */
 .time {
-  transition: all .5s ease;
+  font-family: "Lato", sans-serif, Arial;
   font-size: 13vmin;
   margin: 0;
+  transition: all .5s ease;
 }
 
 /* Input Box */

@@ -5,7 +5,7 @@ https://alexflipnote.xyz/homepage<br>
 # Platforms
 - [Website](https://alexflipnote.xyz/homepage)
 - [Google Chrome](https://chrome.google.com/webstore/detail/alexflipnotehomepage/apilabeffmpplallenlcommnigaafgfb)
-- [Wallpaper Engine (Steam)](http://steamcommunity.com/sharedfiles/filedetails/?id=1201866408)
+- [Firefox](https://addons.mozilla.org/addon/alexflipnote-homepage/)
 
 Do you wish for me to add it for a new platform? Make an **issue** and tell me :3
 
