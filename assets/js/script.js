@@ -1,8 +1,9 @@
-/**
-* Update the displayed date and time on the page.
-*/
+// Check browser type
 var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+var isFirefox = typeof InstallTrigger !== 'undefined';
 
+
+// Update the displayed date and time on the page.
 function updateDateAndTime() {
   var dateString = moment().format('LL'),
   timeString = moment().format('LTS');
@@ -14,6 +15,7 @@ function updateDateAndTime() {
   requestAnimationFrame(updateDateAndTime);
 }
 
+
 function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
   var vars = query.split("&");
@@ -24,15 +26,13 @@ function getQueryVariable(variable) {
   return(false);
 }
 
+
 // Start updating
 moment.locale(getQueryVariable("lang") || navigator.language);
 updateDateAndTime();
 
-/**
-* Get viewport dimensions.
-* @return {Object} Object with w and h properties (containing width and height
-* of the viewport respectively).
-*/
+
+// Get viewport dimensions.
 function getViewportDimensions () {
   return {
     w: typeof window.innerWidth === 'number' ? window.innerWidth : document.documentElement && document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth,
@@ -40,10 +40,8 @@ function getViewportDimensions () {
   };
 }
 
-/**
-* Update the background image height and width properties based on the ratio of
-* the viewport and the ratio of the image.
-*/
+
+// Update the background image height and width properties based on the ratio of the viewport and the ratio of the image.
 function handleViewportResize () {
   var d = getViewportDimensions();
   if ((d.w / d.h) < (backgroundElement.width / backgroundElement.height)) {
@@ -69,18 +67,35 @@ backgroundElement.onload = function () {
   }
   backgroundElement.style.opacity = 1;
 }
+
+
 // Will open this later
 backgroundElement.src = getQueryVariable("bg") || 'assets/images/backgrounds/background' + selected + '.jpg';
 
-// Attach listener to update background width and height based on viewport size
-// changes
+// Attach listener to update background width and height based on viewport size changes
 if (window.addEventListener) window.addEventListener('resize', handleViewportResize, false);
 else if (window.attachEvent) window.attachEvent('onresize', handleViewportResize);
 else window.onresize = handleViewportResize;
 
-/**
-* Add the install button if on chrome and website
-*/
-if (window.location.href.includes("alexflipnote.xyz/homepage") && isChrome == true) {
-  document.getElementById('install-button').style.display = "block";
+
+// Add the install button if on chrome/firefox and website
+window.onload = function() {
+  var website = window.location.href.includes("alexflipnote.xyz/homepage");
+  function enableButton() {
+    addbutton = document.getElementById('install-button');
+    addbutton.style.display = "block";
+  }
+
+  if (website && isFirefox == true) {
+    enableButton()
+    addbutton.innerHTML = "Add to Firefox";
+    addbutton.removeAttribute("onclick");
+    addbutton.target = "_blank";
+    addbutton.href = "https://addons.mozilla.org/addon/alexflipnote-homepage/";
+  }
+
+  if (website && isChrome == true) {
+    enableButton()
+    addbutton.innerHTML = "Add to Chrome";
+  }
 }
