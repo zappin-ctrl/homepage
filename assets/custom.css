@@ -27,6 +27,7 @@
 .time {
   transition: all .5s ease;
   font-size: 13vmin;
+  margin: 0;
 }
 
 /* Input Box */
@@ -47,7 +48,7 @@ input[type="text"] {
   background: transparent;
   border: 0;
   border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-  color: #000;
+  color: #888;
   font-size: 1.5em;
   outline: none;
   padding: .5em;

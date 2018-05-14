@@ -79,12 +79,8 @@ else if (window.attachEvent) window.attachEvent('onresize', handleViewportResize
 else window.onresize = handleViewportResize;
 
 /**
-* Remove add button if not a chrome user or already installed
+* Add the install button if on chrome and website
 */
-if (isChrome == false) {
-  document.getElementById('install-button').style.display = "none";
-}
-
-if (!window.location.href.includes("alexflipnote.xyz/homepage")) {
-  document.getElementById('install-button').style.display = "none";
+if (window.location.href.includes("alexflipnote.xyz/homepage") && isChrome == true) {
+  document.getElementById('install-button').style.display = "block";
 }

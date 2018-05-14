@@ -1,7 +1,6 @@
 # homepage (Clean time/date homepage)
 ![Image](https://i.alexflipnote.xyz/c6cec3.png)
 https://alexflipnote.xyz/homepage<br>
-*This website was made because of a request, so why not share it as well to the public.*
 
 # Platforms
 - [Website](https://alexflipnote.xyz/homepage)
@@ -19,7 +18,8 @@ Do you wish for me to add it for a new platform? Make an **issue** and tell me :
    see it
 
 ### Using custom background on website version
-To do this, you simply add `?bg` at the end of the URL and define the background you want.
+To do this, you simply add `?bg` at the end of the URL and define
+the background you want.
 
 **Requirements**
 - HTTPS
@@ -29,9 +29,8 @@ Example:
 `https://alexflipnote.xyz/homepage/?bg=https://i.alexflipnote.xyz/fd20ed.jpg`
 
 ### Credits
-- @AlexFlipnote: main developer
-- @TTtie: improved Firefox compatibility
-- @deansheather: added localization support, improved code, and added fadein
+- @AlexFlipnote: Main developer
+- @deansheather: Added localization support, improved code, and added fadein
   onload for background image
 
 ### License
