@@ -3,7 +3,7 @@ function save_options() {
   var custombg = document.getElementById('custombg').value;
   var engines = document.getElementById('engines').value;
 
-  chrome.storage.sync.set({
+  chrome.storage.local.set({
     custombg: custombg,
     engines: engines
   }, function() {
@@ -22,7 +22,7 @@ function save_options() {
 // Restores select box and checkbox state using the preferences
 // stored in chrome.storage.
 function restore_options() {
-  chrome.storage.sync.get({
+  chrome.storage.local.get({
     custombg: "",
     engines: "google"
   }, function(items) {

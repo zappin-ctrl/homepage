@@ -92,12 +92,13 @@ window.onload = function() {
   } else if (website && isChrome == true) {
     enableButton()
     addbutton.innerHTML = "Add to Chrome";
-  } else if (!website && isChrome == true) {
-    // Chrome extension
-    chrome.storage.sync.get({
+  } else if (!website && (isChrome || isFirefox == true)) {
+    // Load custom settings
+    chrome.storage.local.get({
       custombg: "",
       engines: "google"
     }, function(items) {
+      console.log(items)
       if (items.custombg.length > 2) {
         backgroundElement.src = items.custombg
       } else {
