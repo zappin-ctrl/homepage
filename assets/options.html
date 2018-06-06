@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Discord_Theme Settings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link href="https://modesta.alexflipnote.xyz/css/modesta.min.css" type="text/css" rel="stylesheet">
+    <style>
+      textarea {
+        border: 0;
+        color: #fff;
+        height: 4em;
+        padding: 1em;
+        width: 30em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="center" style="padding-top: 4em;">
+      <h1 class="emerald-text">Homepage Settings</h1>
+
+      <div class="box-container primary-flat no-border-radius">
+        <h3>Search engine</h3>
+        <select id="engines">
+          <option value="none">None</option>
+          <option value="google">Default: Google</option>
+          <option value="ddg">DuckDuckGo</option>
+          <option value="bing">Bing</option>
+        </select>
+      </div>
+
+      <div class="box-container primary-flat no-border-radius">
+        <h3 class="no-margin">Custom background</h3>
+        <p>
+          If you want your own image from PC, upload it <a href="https://imgur.com/" target="_blank">here</a>
+          to get an URL for this extension
+        </p>
+        <textarea id="custombg" class="secondary"></textarea>
+      </div>
+
+      <button id="save">Save</button>
+    </div>
+
+    <div id="modal" class="modal modal--close" style="background: rgba(0, 0, 0, 0.8);">
+      <div class="modal-content transparent center-text">
+        <h1>Options saved.</h1>
+      </div>
+    </div>
+
+    <script src="js/options.js"></script>
+  </body>
+</html>

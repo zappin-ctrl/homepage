@@ -56,7 +56,7 @@ input[type="text"], input[type="text"]:not(:focus) {
   outline: none;
   padding: .5em;
   transition: all 500ms ease;
-  width: 10em;
+  width: 15em;
 }
 
 input[type="text"]:focus {
