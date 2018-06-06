@@ -98,7 +98,6 @@ window.onload = function() {
       custombg: "",
       engines: "google"
     }, function(items) {
-      console.log(items)
       if (items.custombg.length > 2) {
         backgroundElement.src = items.custombg
       } else {
