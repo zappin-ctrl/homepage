@@ -51,7 +51,7 @@ input[type="text"], input[type="text"]:not(:focus) {
   background: transparent;
   border: 0;
   border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-  color: #888;
+  color: #ddd;
   font-size: 1.5em;
   outline: none;
   padding: .5em;
@@ -67,8 +67,14 @@ input[type="text"]:focus {
   width: 90%;
 }
 
+input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 500ms ease;
+}
+
 input[type="text"]:focus, input[type="text"]:focus::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
+  transition: all 500ms ease;
 }
 
 /* Install button */
