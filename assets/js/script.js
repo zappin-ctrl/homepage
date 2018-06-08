@@ -7,7 +7,9 @@ var isFirefox = typeof InstallTrigger !== 'undefined';
 searchengine = {
   "none": {"url": "none", "holder": "none"},
   "ddg": {"url": "https://duckduckgo.com", "holder": "Search on DuckDuckGo..."},
-  "bing": {"url": "https://www.bing.com/search", "holder": "Search on Bing..."}
+  "bing": {"url": "https://www.bing.com/search", "holder": "Search on Bing..."},
+  "searx": {"url": "https://searx.owo.cloud", "holder": "Search on OwO searX..."},
+  "yahoo": {"url": "https://search.yahoo.com/search", "holder": "Search on Yahoo..."}
 }
 
 
