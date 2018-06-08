@@ -79,18 +79,22 @@ else window.onresize = handleViewportResize;
 // Also if
 window.onload = function() {
   var website = window.location.href.includes("alexflipnote.xyz/homepage");
+  var randombg = backgroundElement.src = 'assets/images/backgrounds/background' + selected + '.jpg';
+
   function enableButton() {
     addbutton = document.getElementById('install-button');
     addbutton.style.display = "block";
   }
 
   if (website && isFirefox == true) {
+    randombg
     enableButton()
     addbutton.innerHTML = "Add to Firefox";
     addbutton.removeAttribute("onclick");
     addbutton.target = "_blank";
     addbutton.href = "https://addons.mozilla.org/addon/alexflipnote-homepage/";
   } else if (website && isChrome == true) {
+    randombg
     enableButton()
     addbutton.innerHTML = "Add to Chrome";
   } else if (!website && (isChrome || isFirefox == true)) {
@@ -102,7 +106,7 @@ window.onload = function() {
       if (items.custombg.length > 2) {
         backgroundElement.src = items.custombg
       } else {
-        backgroundElement.src = 'assets/images/backgrounds/background' + selected + '.jpg';
+        randombg
       }
 
       if (items.engines !== "google") {
