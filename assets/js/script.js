@@ -68,7 +68,6 @@ backgroundElement.onload = function () {
   backgroundElement.style.opacity = 1;
 }
 
-backgroundElement.src = 'assets/images/backgrounds/background' + selected + '.jpg';
 
 // Attach listener to update background width and height based on viewport size changes
 if (window.addEventListener) window.addEventListener('resize', handleViewportResize, false);
