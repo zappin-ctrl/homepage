@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <link href="https://modesta.alexflipnote.xyz/css/modesta.min.css" type="text/css" rel="stylesheet">
     <style>
-      textarea {
+      textarea, input:not([type="checkbox"]) {
         border: 0;
         color: #fff;
-        height: 4em;
         padding: 1em;
         width: 30em;
       }
+
+      textarea { height: 4em; }
     </style>
   </head>
   <body class="highlight">
 
-    <div class="center" style="padding-top: 4em;">
+    <div class="center container" style="padding: 3em 0;">
       <h1 class="emerald-text">Homepage Settings</h1>
 
       <div class="box-container primary-flat no-border-radius">
@@ -38,6 +39,17 @@
           to get an URL for this extension
         </p>
         <textarea id="custombg" class="secondary"></textarea>
+      </div>
+
+      <div class="box-container primary-flat no-border-radius">
+        <h3 class="no-margin">OpenWeather key</h3>
+        <p>
+          To get your own weather key, go to <a href="https://openweathermap.org/appid" target="_blank">this</a> website to recive one.
+        </p>
+        <input id="wkey" class="secondary">
+        <label>
+          <input type="checkbox" id="tempc"> Turn Celcius on
+        </label>
       </div>
 
       <button id="save">Save</button>

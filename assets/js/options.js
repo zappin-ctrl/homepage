@@ -2,10 +2,14 @@
 function save_options() {
   var custombg = document.getElementById('custombg').value;
   var engines = document.getElementById('engines').value;
+  var wkey = document.getElementById('wkey').value;
+  var tempc = document.getElementById('tempc').checked;
 
   chrome.storage.local.set({
     custombg: custombg,
-    engines: engines
+    engines: engines,
+    wkey: wkey,
+    tempc: tempc
   }, function() {
     // Update status to let user know options were saved.
     var modal = document.getElementById('modal');
@@ -24,10 +28,14 @@ function save_options() {
 function restore_options() {
   chrome.storage.local.get({
     custombg: "",
-    engines: "google"
+    engines: "google",
+    wkey: "",
+    tempc: true
   }, function(items) {
     document.getElementById('custombg').value = items.custombg;
     document.getElementById('engines').value = items.engines;
+    document.getElementById('wkey').value = items.wkey;
+    document.getElementById('tempc').checked = items.tempc;
   });
 }
 

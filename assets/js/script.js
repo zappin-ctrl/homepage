@@ -26,6 +26,47 @@ function updateDateAndTime() {
 }
 
 
+// Request function
+var http = function (url, callback) {
+  if (!window.XMLHttpRequest) return console.log("This browser does not support requests");
+  var request = new XMLHttpRequest();
+  request.open('GET', url, true);
+  request.setRequestHeader('Access-Control-Allow-Headers', '*');
+  request.onload = function () {
+    if (this.status >= 200 && this.status < 400) {
+      var json = JSON.parse(this.response);
+      if (callback && typeof(callback) === 'function') {
+        callback(json);
+      }
+    }
+  };
+  request.send(null);
+}
+
+
+// Weather API icons
+var wicons = {
+    '01d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2600.png',
+    '02d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/26c5.png',
+    '03d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2601.png',
+    '04d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
+    '09d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
+    '10d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f326.png',
+    '11d': 'https://cdn.discordapp.com/attachments/132632676225122304/270190320736534538/emoji.png',
+    '13d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f328.png',
+    '50d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f32b.png',
+    '01n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f311.png',
+    '02n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/26c5.png',
+    '03n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2601.png',
+    '04n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
+    '09n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
+    '10n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f326.png',
+    '11n': 'https://cdn.discordapp.com/attachments/132632676225122304/270190320736534538/emoji.png',
+    '13n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f328.png',
+    '50n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f32b.png',
+}
+
+
 // Start updating
 moment.locale(navigator.language);
 updateDateAndTime();
@@ -101,12 +142,35 @@ window.onload = function() {
     // Load custom settings
     chrome.storage.local.get({
       custombg: "",
-      engines: "google"
+      engines: "google",
+      wkey: "",
+      tempc: true
     }, function(items) {
       if (items.custombg.length > 2) {
         backgroundElement.src = items.custombg
       } else {
         randombg
+      }
+
+      if (items.wkey.length > 2) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          pos = position.coords
+
+          http(`http://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&APPID=${items.wkey}`, function(r) {
+            console.log(r)
+            document.getElementById('wicon').src = wicons[r.weather[0].icon]
+            document.getElementById('wname').innerHTML = r.name
+            document.getElementById('wdescription').innerHTML = r.weather[0].description.replace(/^\w/, c => c.toUpperCase());
+            if (items.temp == false) {
+              document.getElementById('wtemp').innerHTML = `${Math.round(parseInt(r.main.temp) * (9 / 5) - 459.67)} °F`
+            } else {
+              document.getElementById('wtemp').innerHTML = `${Math.round(parseInt(r.main.temp) - 273.15)} °C`
+            }
+
+            document.getElementById('wcontainer').style.display = "block";
+          })
+
+        });
       }
 
       if (items.engines !== "google") {

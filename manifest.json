@@ -3,7 +3,7 @@
 
   "name": "AlexFlipnote/Homepage",
   "description": "A website that gives you a clean homepage with random backgrounds!",
-  "version": "0.1.9",
+  "version": "0.2.0",
 
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -28,6 +28,8 @@
 
   "permissions": [
     "activeTab",
-    "storage"
+    "<all_urls>",
+    "storage",
+    "geolocation"
   ]
 }

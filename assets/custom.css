@@ -17,6 +17,17 @@
   }
 }
 
+@keyframes enter-weather {
+  from {
+    left: -100px; opacity: 0;
+  }
+
+  100% {
+    left: 10px; opacity: 1;
+  }
+}
+
+
 .center-object { animation: enter-page 1s ease-in-out; }
 
 /* Background */
@@ -104,4 +115,25 @@ a#install-button { color: #fff; }
   padding-left: 1.5em;
   padding-right: 1.5em;
   padding-top: 1em;
+}
+
+
+/* Weather placeholder */
+.weather-container {
+  animation: enter-weather 1s ease-in-out;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.wtext-container {
+  top: 3px;
+  left: 90px;
+  position: absolute;
+  width: 400px;
+}
+
+.wtext-container * {
+  margin: -7px;
+  font-size: 20px;
 }
