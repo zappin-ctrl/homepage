@@ -157,7 +157,6 @@ window.onload = function() {
           pos = position.coords
 
           http(`http://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&APPID=${items.wkey}`, function(r) {
-            console.log(r)
             document.getElementById('wicon').src = wicons[r.weather[0].icon]
             document.getElementById('wname').innerHTML = r.name
             document.getElementById('wdescription').innerHTML = r.weather[0].description.replace(/^\w/, c => c.toUpperCase());
