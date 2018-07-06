@@ -147,7 +147,9 @@ window.onload = function() {
       tempc: true
     }, function(items) {
       if (items.custombg.length > 2) {
-        backgroundElement.src = items.custombg
+        var chooseranbg = items.custombg.split("\n");
+        var chooseranbgindex = Math.floor(Math.random() * chooseranbg.length);
+        backgroundElement.src = chooseranbg[chooseranbgindex];
       } else {
         randombg
       }
