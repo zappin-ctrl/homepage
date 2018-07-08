@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "content_security_policy": "script-src 'self'; object-src 'self';",
 
   "name": "AlexFlipnote/Homepage",
   "description": "A website that gives you a clean homepage with random backgrounds!",
@@ -29,16 +29,9 @@
 
   "applications": {
     "gecko": {
-      "strict_min_version": "55.0"
+      "id": "root@alexflipnote.xyz",
+      "strict_min_version": "54"
     }
-  },
-
-  "background": {
-    "scripts": [
-      "assets/js/script.js",
-      "assets/js/options.js",
-      "assets/js/moment-with-locales.min.js"
-    ]
   },
 
   "permissions": [
