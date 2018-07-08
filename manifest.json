@@ -30,7 +30,7 @@
   "applications": {
     "gecko": {
       "id": "root@alexflipnote.xyz",
-      "strict_min_version": "54"
+      "strict_min_version": "54.0"
     }
   },
 
