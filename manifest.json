@@ -22,11 +22,10 @@
    "default_popup": "assets/window.html"
   },
 
-  "background" : {
-    "scripts" : [
+  "background": {
+    "scripts": [
       "assets/js/script.js",
-      "assets/js/moment-with-locales.min.js",
-      "assets/js/options.js"
+      "assets/js/moment-with-locales.min.js"
     ]
 	},
 
@@ -47,6 +46,7 @@
   },
 
   "permissions": [
+    "tabs",
     "<all_urls>",
     "activeTab",
     "geolocation",

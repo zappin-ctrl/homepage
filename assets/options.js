@@ -48,7 +48,5 @@ function restore_options() {
   });
 }
 
-if (window.location.href.includes("options.html")) {  
-  document.addEventListener('DOMContentLoaded', restore_options);
-  document.getElementById('save').addEventListener('click', save_options);
-}
+document.addEventListener('DOMContentLoaded', restore_options);
+document.getElementById('save').addEventListener('click', save_options);
