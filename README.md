@@ -28,9 +28,9 @@ Example:
 `https://alexflipnote.xyz/homepage/?bg=https://i.alexflipnote.xyz/fd20ed.jpg`
 
 ### Credits
-- @AlexFlipnote: Main developer
-- @deansheather: Added localization support, improved code, and added fadein
-onload for background image
+- [AlexFlipnote](https://github.com/AlexFlipnote): Main developer
+- [Bowser65](https://github.com/Bowser65): Making some nice features to the homepage project like shortcuts.
+- [deansheather](https://github.com/deansheather): Added localization support, improved code, and added fadein onload for background image
 
 ### License
 A copy of the MIT license can be found in `LICENSE`.
