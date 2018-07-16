@@ -138,6 +138,11 @@ a#install-button { color: #fff; }
   font-size: 20px;
 }
 
+#wicon {
+  height: 72px;
+  width: 72px;
+}
+
 /* Quick links */
 #quicklinks {
   position: absolute;
