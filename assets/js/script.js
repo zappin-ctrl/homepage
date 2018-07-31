@@ -137,7 +137,6 @@ window.onload = function() {
   } else if (website && isChrome == true) {
     randombg
     enableButton()
-    addbutton.onclick = "chrome.webstore.install()"
     addbutton.innerText = "Add to Chrome";
   } else if (!website && (isChrome || isFirefox == true)) {
     // Load custom settings
