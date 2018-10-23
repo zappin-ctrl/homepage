@@ -32,7 +32,7 @@
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
-	
+
   -webkit-user-drag: none;
   -moz-user-drag: none;
   user-drag: none;
@@ -63,7 +63,7 @@ body {
 
 /* Google apps */
 #googleapps {
-  bottom: -2em;
+  bottom: -2.15em;
   display: none;
   position: absolute;
   width: 100%;
