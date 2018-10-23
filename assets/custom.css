@@ -48,6 +48,32 @@
   transition: all .5s ease;
 }
 
+/* Google apps */
+#googleapps {
+  bottom: -2em;
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.buttons { display: none; }
+
+#googleapps img {
+  margin: 0 1em;
+  height: 62px;
+  width: 48.5px;
+}
+
+.btn {
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 750px) {
+  .buttons { flex-flow: row nowrap; }
+}
+
 /* Input Box */
 .form-box {
   margin-top: 2em;

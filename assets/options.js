@@ -5,6 +5,7 @@ function save_options() {
   var wkey = document.getElementById('wkey').value;
   var tempc = document.getElementById('tempc').checked;
   var links = document.getElementById('links').value;
+  var googleapps = document.getElementById('googleapps').checked;
   var showSettings = document.getElementById('show-settings').checked;
 
   chrome.storage.local.set({
@@ -12,6 +13,7 @@ function save_options() {
     engines: engines,
     wkey: wkey,
     tempc: tempc,
+    googleapps: googleapps,
     links: links,
     showSettings: showSettings
   }, function() {
@@ -36,6 +38,7 @@ function restore_options() {
     wkey: "",
     tempc: true,
     links: "",
+    googleapps: false,
     showSettings: true
   }, function(items) {
     document.getElementById('custombg').value = items.custombg;
@@ -43,6 +46,7 @@ function restore_options() {
     document.getElementById('wkey').value = items.wkey;
     document.getElementById('tempc').checked = items.tempc;
     document.getElementById('links').value = items.links;
+    document.getElementById('googleapps').checked = items.googleapps;
     document.getElementById('show-settings').checked = items.showSettings;
     document.getElementById('quicklink-limit').innerText = Math.floor((window.innerHeight - 65) / 40).toString()
   });

@@ -146,6 +146,7 @@ window.onload = function() {
       wkey: "",
       tempc: true,
       links: "",
+      googleapps: false,
       showSettings: true
     }, function(items) {
       if (items.custombg.length > 2) {
@@ -232,6 +233,12 @@ window.onload = function() {
           chrome.runtime.openOptionsPage()
         })
       }
+
+      if (items.googleapps) {
+        document.getElementById('googleapps').style.display = "block";
+        document.getElementById('googleapps-btn').style.display = "flex";
+      }
+
     })
   }
 
