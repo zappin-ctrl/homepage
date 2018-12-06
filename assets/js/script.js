@@ -13,6 +13,17 @@ searchengine = {
 }
 
 
+// HEX Time
+function pad(n) { return ("0" + n).slice(-2); }
+function getHexTime() {
+  var now = new Date();
+  var hour = pad(now.getHours());
+  var minute = pad(now.getMinutes());
+  var second = pad(now.getSeconds());
+  return hour.toString() + minute.toString() + second.toString();
+}
+
+
 // Update the displayed date and time on the page.
 function updateDateAndTime() {
   var dateString = moment().format('LL'),
@@ -145,6 +156,7 @@ window.onload = function() {
       engines: "google",
       wkey: "",
       tempc: true,
+      hexbg: false,
       links: "",
       googleapps: false,
       showSettings: true
@@ -155,6 +167,16 @@ window.onload = function() {
         backgroundElement.src = chooseranbg[chooseranbgindex];
       } else {
         randombg
+      }
+
+      if (items.hexbg) {
+        backgroundElement.src = "";
+        function timeInHex() {
+          document.body.style.backgroundColor = "#" + getHexTime("hex");
+          setTimeout(timeInHex, 50); // Repeat every 0.1 seconds
+        }
+
+        timeInHex();
       }
 
       if (items.wkey.length > 2) {

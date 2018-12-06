@@ -1,6 +1,7 @@
 // Saves options to chrome.storage
 function save_options() {
   var custombg = document.getElementById('custombg').value;
+  var hexbg = document.getElementById('hexbg').checked;
   var engines = document.getElementById('engines').value;
   var wkey = document.getElementById('wkey').value;
   var tempc = document.getElementById('tempc').checked;
@@ -12,6 +13,7 @@ function save_options() {
     custombg: custombg,
     engines: engines,
     wkey: wkey,
+    hexbg: hexbg,
     tempc: tempc,
     googleapps: googleapps,
     links: links,
@@ -37,11 +39,13 @@ function restore_options() {
     engines: "google",
     wkey: "",
     tempc: true,
+    hexbg: false,
     links: "",
     googleapps: false,
     showSettings: true
   }, function(items) {
     document.getElementById('custombg').value = items.custombg;
+    document.getElementById('hexbg').checked = items.hexbg;
     document.getElementById('engines').value = items.engines;
     document.getElementById('wkey').value = items.wkey;
     document.getElementById('tempc').checked = items.tempc;
