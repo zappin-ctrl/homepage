@@ -178,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
       if (items.customfont) {
         addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
-        console.log(items.customfontgoogle)
         if (items.customfontgoogle) {
           document.head.innerText += '<link href="https://fonts.googleapis.com/css?family=' + items.customfont.replace(" ", "+") + '" rel="stylesheet">';
         }
