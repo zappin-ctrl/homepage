@@ -10,6 +10,7 @@ function save_options() {
   var links = document.getElementById('links').value;
   var googleapps = document.getElementById('googleapps').checked;
   var showSettings = document.getElementById('show-settings').checked;
+  var customcss = document.getElementById('customcss').value;
 
   chrome.storage.local.set({
     custombg: custombg,
@@ -21,7 +22,8 @@ function save_options() {
     tempc: tempc,
     googleapps: googleapps,
     links: links,
-    showSettings: showSettings
+    showSettings: showSettings,
+    customcss: customcss
   }, function() {
     // Update status to let user know options were saved.
     var modal = document.getElementById('modal');
@@ -48,7 +50,8 @@ function restore_options() {
     hexbg: false,
     links: "",
     googleapps: false,
-    showSettings: true
+    showSettings: true,
+    customcss: ""
   }, function(items) {
     document.getElementById('custombg').value = items.custombg;
     document.getElementById('customfont').value = items.customfont;
@@ -60,7 +63,8 @@ function restore_options() {
     document.getElementById('links').value = items.links;
     document.getElementById('googleapps').checked = items.googleapps;
     document.getElementById('show-settings').checked = items.showSettings;
-    document.getElementById('quicklink-limit').innerText = Math.floor((window.innerHeight - 65) / 40).toString()
+    document.getElementById('quicklink-limit').innerText = Math.floor((window.innerHeight - 65) / 40).toString();
+    document.getElementById('customcss').value = items.customcss;
   });
 }
 

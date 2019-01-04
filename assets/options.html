@@ -1,103 +1,112 @@
 <html>
-  <head>
-    <title>Homepage Settings</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <link href="https://modesta.alexflipnote.xyz/css/modesta.min.css" type="text/css" rel="stylesheet">
-    <style>
-      textarea, input:not([type="checkbox"]) {
-        border: 0;
-        color: #fff;
-        padding: 1em;
-        width: 30em;
-      }
+<head>
+  <title>Homepage Settings</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <link href="https://modesta.alexflipnote.xyz/css/modesta.min.css" type="text/css" rel="stylesheet">
+  <style>
+  textarea, input:not([type="checkbox"]) {
+    border: 0;
+    color: #fff;
+    padding: 1em;
+    width: 30em;
+  }
 
-      textarea { height: 7em; }
-      p { margin: 15px 4em; margin-top: 0; }
-    </style>
-  </head>
-  <body class="highlight">
+  textarea { height: 7em; }
+  p { margin: 15px 4em; margin-top: 0; }
+  </style>
+</head>
+<body class="highlight">
 
-    <div class="center container" style="padding: 3em 0;">
-      <h1 class="emerald-text">Homepage Settings</h1>
+  <div class="center container" style="padding: 3em 0;">
+    <h1 class="emerald-text">Homepage Settings</h1>
 
-      <div class="box-container primary-flat no-border-radius">
-        <h3>Search engine</h3>
-        <select id="engines">
-          <option value="none">None</option>
-          <option value="google">Default: Google</option>
-          <option value="bing">Bing</option>
-          <option value="ddg">DuckDuckGo</option>
-          <option value="searx">OwO searX</option>
-          <option value="yahoo">Yahoo</option>
-        </select>
-      </div>
-
-      <div class="box-container primary-flat no-border-radius">
-        <h3 class="no-margin">Custom background URL</h3>
-        <p>
-          If you want your own image from PC, upload it <a href="https://imgur.com/" target="_blank">here</a>
-          to get an URL for this extension
-          <br>
-          <span class="sun-flower-text">NOTE:</span> If you want multiple backgrounds, add a new link for each line
-        </p>
-        <textarea id="custombg" class="secondary"></textarea>
-      </div>
-
-      <div class="box-container primary-flat no-border-radius">
-        <h3 class="no-margin">Custom Font</h3>
-        <p>
-          You can have any fonts that you've installed to your local machine, just keep in mind that this is case sensitive.
-          This does also support any fonts from <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.
-          You <i>need</i> both <b>Internet</b> and <b>From Google Fonts?</b> enabled in order for this to work on the homepage.
-          Without any of those two requirements, it will fall back to the default font instead. Unless you've installed the font locally.
-        </p>
-        <label><input class="secondary" id="customfont"></label>
-        <label>
-          <input type="checkbox" id="customfontgoogle"> From Google Fonts?
-        </label>
-      </div>
-
-      <div class="box-container primary-flat no-border-radius">
-        <h3 class="no-margin">24h HEX Background</h3>
-        <a href="https://alexflipnote.xyz/pages/hexclock/">Click here to see a live example</a>
-        <p><span class="sun-flower-text">Keep in mind</span>, checking this will disable <b>Custom background URL</b></p>
-        <label>
-          <input type="checkbox" id="hexbg"> Enable
-        </label>
-      </div>
-
-      <div class="box-container primary-flat no-border-radius">
-        <h3 class="no-margin">OpenWeather key</h3>
-        <p>
-          To get your own weather key, go to <a href="https://openweathermap.org/appid" target="_blank">this</a> website to recive one.
-        </p>
-        <input id="wkey" class="secondary">
-        <label>
-          <input type="checkbox" id="tempc"> Turn Celcius on
-        </label>
-      </div>
-
-      <div class="box-container primary-flat no-border-radius">
-        <h3 class="no-margin">Quick links</h3>
-        <p>
-          If you want multiple links, add a new link for each line<br/>
-          <span class="sun-flower-text">NOTE:</span> You can add up to <span id='quicklink-limit' class='sun-flower-text'>666</span> links
-        </p>
-        <textarea id="links" class="secondary"></textarea>
-        <label><input type="checkbox" id="show-settings"> Show settings button</label>
-        <label><input type="checkbox" id="googleapps"> Show Google Apps</label>
+    <div class="box-container primary-flat no-border-radius">
+      <h3>Search engine</h3>
+      <select id="engines">
+        <option value="none">None</option>
+        <option value="google">Default: Google</option>
+        <option value="bing">Bing</option>
+        <option value="ddg">DuckDuckGo</option>
+        <option value="searx">OwO searX</option>
+        <option value="yahoo">Yahoo</option>
+      </select>
     </div>
 
-      <button id="save">Save</button>
+    <div class="box-container primary-flat no-border-radius">
+      <h3 class="no-margin">Custom background URL</h3>
+      <p>
+        If you want your own image from PC, upload it <a href="https://imgur.com/" target="_blank">here</a>
+        to get an URL for this extension
+        <br>
+        <span class="sun-flower-text">NOTE:</span> If you want multiple backgrounds, add a new link for each line
+      </p>
+      <textarea id="custombg" class="secondary"></textarea>
     </div>
 
-    <div id="modal" class="modal modal--close" style="background: rgba(0, 0, 0, 0.8);">
-      <div class="modal-content transparent center-text">
-        <h1>Options saved.</h1>
-      </div>
+    <div class="box-container primary-flat no-border-radius">
+      <h3 class="no-margin">Custom Font</h3>
+      <p>
+        You can have any fonts that you've installed to your local machine, just keep in mind that this is case sensitive.
+        This does also support any fonts from <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.
+        You <i>need</i> both <b>Internet</b> and <b>From Google Fonts?</b> enabled in order for this to work on the homepage.
+        Without any of those two requirements, it will fall back to the default font instead. Unless you've installed the font locally.
+      </p>
+      <label><input class="secondary" id="customfont"></label>
+      <label>
+        <input type="checkbox" id="customfontgoogle"> From Google Fonts?
+      </label>
     </div>
 
-    <script src="options.js"></script>
-  </body>
+    <div class="box-container primary-flat no-border-radius">
+      <h3 class="no-margin">24h HEX Background</h3>
+      <a href="https://alexflipnote.xyz/pages/hexclock/">Click here to see a live example</a>
+      <p><span class="sun-flower-text">Keep in mind</span>, checking this will disable <b>Custom background URL</b></p>
+      <label>
+        <input type="checkbox" id="hexbg"> Enable
+      </label>
+    </div>
+
+    <div class="box-container primary-flat no-border-radius">
+      <h3 class="no-margin">OpenWeather key</h3>
+      <p>
+        To get your own weather key, go to <a href="https://openweathermap.org/appid" target="_blank">this</a> website to recive one.
+      </p>
+      <input id="wkey" class="secondary">
+      <label>
+        <input type="checkbox" id="tempc"> Turn Celcius on
+      </label>
+    </div>
+
+    <div class="box-container primary-flat no-border-radius">
+      <h3 class="no-margin">Quick links</h3>
+      <p>
+        If you want multiple links, add a new link for each line<br/>
+        <span class="sun-flower-text">NOTE:</span> You can add up to <span id='quicklink-limit' class='sun-flower-text'>666</span> links
+      </p>
+      <textarea id="links" class="secondary"></textarea>
+      <label><input type="checkbox" id="show-settings"> Show settings button</label>
+      <label><input type="checkbox" id="googleapps"> Show Google Apps</label>
+    </div>
+
+    <div class="box-container primary-flat no-border-radius">
+      <h3 class="no-margin">Custom CSS</h3>
+      <p>
+        Go <span class="emerald-text">wild</span>, make the homepage <b class="sun-flower-text">more personal</b>.
+        I allow you to do <span class="emerald-text">whatever</span> you desire.
+      </p>
+      <textarea id="customcss" class="secondary" style="height: 15em; width: 90%;" placeholder="Write some hot CSS in here..."></textarea>
+    </div>
+
+    <button id="save">Save</button>
+  </div>
+
+  <div id="modal" class="modal modal--close" style="background: rgba(0, 0, 0, 0.8);">
+    <div class="modal-content transparent center-text">
+      <h1>Options saved.</h1>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
 </html>

@@ -160,9 +160,10 @@ document.addEventListener('DOMContentLoaded', function(){
       hexbg: false,
       links: "",
       googleapps: false,
-      showSettings: true
+      showSettings: true,
+      customcss: ""
     }, function(items) {
-      if (items.custombg.length > 2) {
+      if (items.custombg.length) {
         var chooseranbg = items.custombg.split("\n");
         var chooseranbgindex = Math.floor(Math.random() * chooseranbg.length);
         backgroundElement.src = chooseranbg[chooseranbgindex];
@@ -170,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function(){
         randombg
       }
 
-      if (items.customfont.length > 2) {
+      if (items.customfont.length) {
         addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
         console.log(items.customfontgoogle)
         if (items.customfontgoogle) {
@@ -178,6 +179,10 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         document.body.style.fontFamily = addFont;
+      }
+
+      if (items.customcss.length) {
+        document.head.innerHTML += '<style>' + items.customcss + '</style>';
       }
 
       if (items.hexbg) {
@@ -190,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function(){
         timeInHex();
       }
 
-      if (items.wkey.length > 2) {
+      if (items.wkey.length) {
         navigator.geolocation.getCurrentPosition(function(position) {
           pos = position.coords
           var lang = navigator.language.split('-')[0]
@@ -220,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function(){
       }
 
       // Quick links
-      if (items.links.length > 2) {
+      if (items.links.length) {
         var screenH = document.getElementById('js-bg').getBoundingClientRect().height - 65
         var links = items.links.split('\n').slice(0, Math.floor((window.innerHeight - 65) / 40))
         if (links.length * 52 > screenH) {
@@ -229,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         for (var i = 0; i < links.length; i++) {
           (function (lnk) {
-            if (lnk.length > 2) {
+            if (lnk.length) {
               setTimeout(function () {
                 var link = document.createElement('a')
                 var img = document.createElement('img')
