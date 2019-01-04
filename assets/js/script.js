@@ -179,14 +179,19 @@ document.addEventListener('DOMContentLoaded', function(){
       if (items.customfont) {
         addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
         if (items.customfontgoogle) {
-          document.head.innerText += '<link href="https://fonts.googleapis.com/css?family=' + items.customfont.replace(" ", "+") + '" rel="stylesheet">';
+          gFont = document.createElement("link");
+          gFont.href = "https://fonts.googleapis.com/css?family=" + items.customfont.replace(" ", "+")
+          gFont.rel = "stylesheet";
+          document.head.appendChild(gFont);
         }
-
         document.body.style.fontFamily = addFont;
       }
 
       if (items.customcss) {
-        document.head.innerText += '<style>' + items.customcss + '</style>';
+        cssEl = document.createElement("style");
+        cssEl.type = "text/css";
+        cssEl.innerText = items.customcss;
+        document.head.appendChild(cssEl);
       }
 
       if (items.hexbg) {
