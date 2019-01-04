@@ -13,6 +13,7 @@
       }
 
       textarea { height: 7em; }
+      p { margin: 15px 4em; margin-top: 0; }
     </style>
   </head>
   <body class="highlight">
@@ -41,6 +42,20 @@
           <span class="sun-flower-text">NOTE:</span> If you want multiple backgrounds, add a new link for each line
         </p>
         <textarea id="custombg" class="secondary"></textarea>
+      </div>
+
+      <div class="box-container primary-flat no-border-radius">
+        <h3 class="no-margin">Custom Font</h3>
+        <p>
+          You can have any fonts that you've installed to your local machine, just keep in mind that this is case sensitive.
+          This does also support any fonts from <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.
+          You <i>need</i> both <b>Internet</b> and <b>From Google Fonts?</b> enabled in order for this to work on the homepage.
+          Without any of those two requirements, it will fall back to the default font instead. Unless you've installed the font locally.
+        </p>
+        <label><input class="secondary" id="customfont"></label>
+        <label>
+          <input type="checkbox" id="customfontgoogle"> From Google Fonts?
+        </label>
       </div>
 
       <div class="box-container primary-flat no-border-radius">

@@ -1,6 +1,8 @@
 // Saves options to chrome.storage
 function save_options() {
   var custombg = document.getElementById('custombg').value;
+  var customfont = document.getElementById('customfont').value;
+  var customfontgoogle = document.getElementById('customfontgoogle').checked;
   var hexbg = document.getElementById('hexbg').checked;
   var engines = document.getElementById('engines').value;
   var wkey = document.getElementById('wkey').value;
@@ -11,6 +13,8 @@ function save_options() {
 
   chrome.storage.local.set({
     custombg: custombg,
+    customfont: customfont,
+    customfontgoogle: customfontgoogle,
     engines: engines,
     wkey: wkey,
     hexbg: hexbg,
@@ -36,6 +40,8 @@ function save_options() {
 function restore_options() {
   chrome.storage.local.get({
     custombg: "",
+    customfont: "",
+    customfontgoogle: false,
     engines: "google",
     wkey: "",
     tempc: true,
@@ -45,6 +51,8 @@ function restore_options() {
     showSettings: true
   }, function(items) {
     document.getElementById('custombg').value = items.custombg;
+    document.getElementById('customfont').value = items.customfont;
+    document.getElementById('customfontgoogle').checked = items.customfontgoogle;
     document.getElementById('hexbg').checked = items.hexbg;
     document.getElementById('engines').value = items.engines;
     document.getElementById('wkey').value = items.wkey;

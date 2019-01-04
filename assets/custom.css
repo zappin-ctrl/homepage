@@ -37,7 +37,9 @@
   -moz-user-drag: none;
   user-drag: none;
 }
+
 body {
+  font-family: "Lato", sans-serif, Arial;
 	overflow: hidden;
 }
 
@@ -55,7 +57,6 @@ body {
 
 /* Clock */
 .time {
-  font-family: "Lato", sans-serif, Arial;
   font-size: 13vmin;
   margin: 0;
   transition: all .5s ease;

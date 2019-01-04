@@ -2,7 +2,6 @@
 var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 var isFirefox = typeof InstallTrigger !== 'undefined';
 
-
 // Engine list
 searchengine = {
   "none": {"url": "none", "holder": "none"},
@@ -57,24 +56,24 @@ var http = function (url, callback) {
 
 // Weather API icons
 var wicons = {
-    '01d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2600.png',
-    '02d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/26c5.png',
-    '03d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2601.png',
-    '04d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
-    '09d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
-    '10d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f326.png',
-    '11d': 'https://cdn.discordapp.com/attachments/132632676225122304/270190320736534538/emoji.png',
-    '13d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f328.png',
-    '50d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f32b.png',
-    '01n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f311.png',
-    '02n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/26c5.png',
-    '03n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2601.png',
-    '04n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
-    '09n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
-    '10n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f326.png',
-    '11n': 'https://cdn.discordapp.com/attachments/132632676225122304/270190320736534538/emoji.png',
-    '13n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f328.png',
-    '50n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f32b.png',
+  '01d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2600.png',
+  '02d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/26c5.png',
+  '03d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2601.png',
+  '04d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
+  '09d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
+  '10d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f326.png',
+  '11d': 'https://cdn.discordapp.com/attachments/132632676225122304/270190320736534538/emoji.png',
+  '13d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f328.png',
+  '50d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f32b.png',
+  '01n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f311.png',
+  '02n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/26c5.png',
+  '03n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/72x72/2601.png',
+  '04n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
+  '09n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f327.png',
+  '10n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f326.png',
+  '11n': 'https://cdn.discordapp.com/attachments/132632676225122304/270190320736534538/emoji.png',
+  '13n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f328.png',
+  '50n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/2/72x72/1f32b.png',
 }
 
 
@@ -129,7 +128,7 @@ else window.onresize = handleViewportResize;
 
 // Add the install button if on chrome/firefox and website
 // Also if
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function(){
   var website = window.location.href.includes("alexflipnote.xyz/homepage");
   var randombg = backgroundElement.src = 'assets/images/backgrounds/background' + selected + '.jpg';
 
@@ -153,6 +152,8 @@ window.onload = function() {
     // Load custom settings
     chrome.storage.local.get({
       custombg: "",
+      customfont: "",
+      customfontgoogle: false,
       engines: "google",
       wkey: "",
       tempc: true,
@@ -167,6 +168,16 @@ window.onload = function() {
         backgroundElement.src = chooseranbg[chooseranbgindex];
       } else {
         randombg
+      }
+
+      if (items.customfont.length > 2) {
+        addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
+        console.log(items.customfontgoogle)
+        if (items.customfontgoogle) {
+          document.head.innerHTML += '<link href="https://fonts.googleapis.com/css?family=' + items.customfont.replace(" ", "+") + '" rel="stylesheet">';
+        }
+
+        document.body.style.fontFamily = addFont;
       }
 
       if (items.hexbg) {
@@ -262,4 +273,4 @@ window.onload = function() {
     })
   }
 
-}
+}, false);
