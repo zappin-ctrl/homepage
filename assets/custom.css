@@ -167,15 +167,16 @@ a#install-button { color: #fff; }
 }
 
 .wtext-container {
-  top: 3px;
   left: 90px;
   position: absolute;
+  top: 0;
   width: 400px;
 }
 
 .wtext-container * {
   margin: -7px;
   font-size: 20px;
+  font-weight: 400;
 }
 
 #wicon {
