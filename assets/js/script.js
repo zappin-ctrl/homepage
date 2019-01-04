@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function(){
   } else if (!website && (isChrome || isFirefox == true)) {
     // Load custom settings
     chrome.storage.local.get({
+      language: "",
       custombg: "",
       customfont: "",
       customfontgoogle: false,
@@ -171,18 +172,22 @@ document.addEventListener('DOMContentLoaded', function(){
         randombg
       }
 
-      if (items.customfont.length) {
+      if (items.language) {
+        moment.locale(items.language);
+      }
+
+      if (items.customfont) {
         addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
         console.log(items.customfontgoogle)
         if (items.customfontgoogle) {
-          document.head.innerHTML += '<link href="https://fonts.googleapis.com/css?family=' + items.customfont.replace(" ", "+") + '" rel="stylesheet">';
+          document.head.innerText += '<link href="https://fonts.googleapis.com/css?family=' + items.customfont.replace(" ", "+") + '" rel="stylesheet">';
         }
 
         document.body.style.fontFamily = addFont;
       }
 
-      if (items.customcss.length) {
-        document.head.innerHTML += '<style>' + items.customcss + '</style>';
+      if (items.customcss) {
+        document.head.innerText += '<style>' + items.customcss + '</style>';
       }
 
       if (items.hexbg) {
@@ -195,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function(){
         timeInHex();
       }
 
-      if (items.wkey.length) {
+      if (items.wkey) {
         navigator.geolocation.getCurrentPosition(function(position) {
           pos = position.coords
           var lang = navigator.language.split('-')[0]
@@ -225,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function(){
       }
 
       // Quick links
-      if (items.links.length) {
+      if (items.links) {
         var screenH = document.getElementById('js-bg').getBoundingClientRect().height - 65
         var links = items.links.split('\n').slice(0, Math.floor((window.innerHeight - 65) / 40))
         if (links.length * 52 > screenH) {

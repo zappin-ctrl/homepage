@@ -1,5 +1,6 @@
 // Saves options to chrome.storage
 function save_options() {
+  var language = document.getElementById('language').value;
   var custombg = document.getElementById('custombg').value;
   var customfont = document.getElementById('customfont').value;
   var customfontgoogle = document.getElementById('customfontgoogle').checked;
@@ -13,6 +14,7 @@ function save_options() {
   var customcss = document.getElementById('customcss').value;
 
   chrome.storage.local.set({
+    language: language,
     custombg: custombg,
     customfont: customfont,
     customfontgoogle: customfontgoogle,
@@ -41,6 +43,7 @@ function save_options() {
 // stored in chrome.storage.
 function restore_options() {
   chrome.storage.local.get({
+    language: "",
     custombg: "",
     customfont: "",
     customfontgoogle: false,
@@ -53,6 +56,7 @@ function restore_options() {
     showSettings: true,
     customcss: ""
   }, function(items) {
+    document.getElementById('language').value = items.language;
     document.getElementById('custombg').value = items.custombg;
     document.getElementById('customfont').value = items.customfont;
     document.getElementById('customfontgoogle').checked = items.customfontgoogle;
@@ -67,6 +71,16 @@ function restore_options() {
     document.getElementById('customcss').value = items.customcss;
   });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var languages = moment.locales();
+  for (var i = 0; i < languages.length; i++) {
+    var option = document.createElement("option");
+    option.text = languages[i];
+    option.value = languages[i];
+    document.getElementById("language").appendChild(option);
+  }
+});
 
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click', save_options);

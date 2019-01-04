@@ -22,7 +22,16 @@
     <h1 class="emerald-text">Homepage Settings</h1>
 
     <div class="box-container primary-flat no-border-radius">
-      <h3>Search engine</h3>
+      <h3 class="no-margin">Change language</h3>
+      <p>Changes the language displayed on the clock (weather won't be affected by this)</p>
+      <select id="language">
+        <option value="">Default: Local language</option>
+      </select>
+    </div>
+
+    <div class="box-container primary-flat no-border-radius">
+      <h3 class="no-margin">Search engine</h3>
+      <p>Change search engine source</p>
       <select id="engines">
         <option value="none">None</option>
         <option value="google">Default: Google</option>
@@ -107,6 +116,7 @@
     </div>
   </div>
 
+  <script src="js/moment-with-locales.min.js"></script>
   <script src="options.js"></script>
 </body>
 </html>
