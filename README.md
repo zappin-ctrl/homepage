@@ -10,22 +10,16 @@ Do you wish for me to add it for a new platform? Make an **issue** and tell me :
 
 ---
 
+### What people think about homepage
+*Google attempts to hide DuckDuckGo, so on Google Chrome, it's kinda hard to find DuckDuckGo without the right link. BUT WITH THE ALEXFLIPNOTE HOMEPAGE!*
+<br>\- DrGrunt#9537
+
+
 ### Adding backgrounds
 1. Add image file as `.jpg` to `assets/backgrounds` directory with a filename
 conforming to the rest of the image files (last index)
 2. Bump the multiplier on line 47 of `assets/script.js` so the JavaScript can
 see it
-
-### Using custom background on website version
-To do this, you simply add `?bg` at the end of the URL and define
-the background you want.
-
-**Requirements**
-- HTTPS
-- Uploaded background
-
-Example:
-`https://alexflipnote.xyz/homepage/?bg=https://i.alexflipnote.xyz/fd20ed.jpg`
 
 ### Credits
 - [AlexFlipnote](https://github.com/AlexFlipnote): Main developer
