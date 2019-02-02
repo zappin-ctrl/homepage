@@ -9,13 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   if (isFirefox) {
-    enableButton()
+    enableButton();
     addbutton.innerText = "Add to Firefox";
-    addbutton.removeAttribute("onclick");
-    addbutton.target = "_blank";
     addbutton.href = "https://addons.mozilla.org/addon/alexflipnote-homepage/";
   } else if (isChrome) {
-    enableButton()
+    enableButton();
+    addbutton.href = "https://chrome.google.com/webstore/detail/apilabeffmpplallenlcommnigaafgfb";
     addbutton.innerText = "Add to Chrome";
   }
 
