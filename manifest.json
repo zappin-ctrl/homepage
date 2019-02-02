@@ -4,10 +4,10 @@
 
   "name": "AlexFlipnote/Homepage",
   "description": "A website that gives you a clean homepage with random backgrounds!",
-  "version": "0.3.6",
+  "version": "0.3.7",
 
   "chrome_url_overrides": {
-    "newtab": "index.html"
+    "newtab": "indexPlugin.html"
   },
 
   "icons": {
@@ -24,13 +24,16 @@
 
   "background": {
     "scripts": [
-      "assets/js/script.js",
-      "assets/js/moment-with-locales.min.js"
+      "assets/js/demo.js",
+      "assets/js/installButton.js",
+      "assets/js/main.js",
+      "assets/js/moment-with-locales.min.js",
+      "assets/js/pluginScript.js"
     ]
 	},
 
   "web_accessible_resources": [
-		"index.html"
+		"indexPlugin.html"
 	],
 
   "options_ui": {
