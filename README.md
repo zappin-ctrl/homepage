@@ -1,8 +1,8 @@
 # homepage (Clean time/date homepage)
-![Image](https://i.alexflipnote.xyz/c6cec3.png)
+![Image](https://i.alexflipnote.dev/c6cec3.png)
 
 # Platforms
-- [Website](https://alexflipnote.xyz/homepage)
+- [Website](https://alexflipnote.dev/homepage)
 - [Google Chrome](https://chrome.google.com/webstore/detail/alexflipnotehomepage/apilabeffmpplallenlcommnigaafgfb)
 - [Firefox](https://addons.mozilla.org/addon/alexflipnote-homepage/)
 
