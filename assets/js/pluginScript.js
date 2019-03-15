@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     customfontgoogle: false,
     engines: "google",
     wkey: "",
+    wlang: "en",
     tempc: true,
     hexbg: false,
     links: "",
@@ -114,9 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (items.wkey) {
       navigator.geolocation.getCurrentPosition(function(position) {
         pos = position.coords;
-        var lang = navigator.language.split('-')[0]
-
-        http(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&lang=${lang}&APPID=${items.wkey}`, function(r) {
+        http(`https://api.openweathermap.org/data/2.5/weather?lat=${pos.latitude}&lon=${pos.longitude}&lang=${items.wlang}&APPID=${items.wkey}`, function(r) {
           document.getElementById('wicon').src = wicons[r.weather[0].icon]
           document.getElementById('wname').innerText = r.name
           document.getElementById('wdescription').innerText = r.weather[0].description.replace(/^\w/, c => c.toUpperCase());

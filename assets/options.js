@@ -7,6 +7,7 @@ function save_options() {
   var hexbg = document.getElementById('hexbg').checked;
   var engines = document.getElementById('engines').value;
   var wkey = document.getElementById('wkey').value;
+  var wlang = document.getElementById('wlanguage').value;
   var tempc = document.getElementById('tempc').checked;
   var links = document.getElementById('links').value;
   var googleapps = document.getElementById('googleapps').checked;
@@ -20,6 +21,7 @@ function save_options() {
     customfontgoogle: customfontgoogle,
     engines: engines,
     wkey: wkey,
+    wlang: wlang,
     hexbg: hexbg,
     tempc: tempc,
     googleapps: googleapps,
@@ -49,6 +51,7 @@ function restore_options() {
     customfontgoogle: false,
     engines: "google",
     wkey: "",
+    wlang: "en",
     tempc: true,
     hexbg: false,
     links: "",
@@ -63,6 +66,7 @@ function restore_options() {
     document.getElementById('hexbg').checked = items.hexbg;
     document.getElementById('engines').value = items.engines;
     document.getElementById('wkey').value = items.wkey;
+    document.getElementById('wlanguage').value = items.wlang;
     document.getElementById('tempc').checked = items.tempc;
     document.getElementById('links').value = items.links;
     document.getElementById('googleapps').checked = items.googleapps;
@@ -74,11 +78,33 @@ function restore_options() {
 
 document.addEventListener('DOMContentLoaded', function() {
   var languages = moment.locales();
+  var wlanguages = {
+    "ar": "Arabic", "bg": "Bulgarian", "ca": "Catalan", "cz": "Czech",
+    "de": "German", "el": "Greek", "fa": "Persian (Farsi)", "fi": "Finnish",
+    "fr": "French", "gl": "Galician", "hr": "Croatian", "hu": "Hungarian",
+    "it": "Italian", "ja": "Japanese", "kr": "Korean", "la": "Latvian",
+    "lt": "Lithuanian", "mk": "Macedonian", "nl": "Dutch", "pl": "Polish",
+    "pt": "Portuguese", "ro": "Romanian", "ru": "Russian", "se": "Swedish",
+    "sk": "Slovak", "sl": "Slovenian", "es": "Spanish", "tr": "Turkish",
+    "ua": "Ukrainian", "vi": "Vietnamese", "zh_cn": "Chinese Simplified",
+    "zh_tw": "Chinese Traditional"
+  }
+
+  // Clock languages
   for (var i = 0; i < languages.length; i++) {
     var option = document.createElement("option");
     option.text = languages[i];
     option.value = languages[i];
     document.getElementById("language").appendChild(option);
+  }
+
+  // Weather languages
+  for (var i in wlanguages) {
+    console.log(i)
+    var option = document.createElement("option");
+    option.text = wlanguages[i];
+    option.value = i;
+    document.getElementById("wlanguage").appendChild(option);
   }
 });
 
