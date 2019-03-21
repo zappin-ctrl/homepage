@@ -7,6 +7,7 @@ function save_options() {
   var hexbg = document.getElementById('hexbg').checked;
   var engines = document.getElementById('engines').value;
   var wkey = document.getElementById('wkey').value;
+  var w3hours = document.getElementById('w3hours').checked;
   var wlang = document.getElementById('wlanguage').value;
   var tempc = document.getElementById('tempc').checked;
   var links = document.getElementById('links').value;
@@ -21,6 +22,7 @@ function save_options() {
     customfontgoogle: customfontgoogle,
     engines: engines,
     wkey: wkey,
+    w3hours: w3hours,
     wlang: wlang,
     hexbg: hexbg,
     tempc: tempc,
@@ -51,6 +53,7 @@ function restore_options() {
     customfontgoogle: false,
     engines: "google",
     wkey: "",
+    w3hours: false,
     wlang: "en",
     tempc: true,
     hexbg: false,
@@ -66,6 +69,7 @@ function restore_options() {
     document.getElementById('hexbg').checked = items.hexbg;
     document.getElementById('engines').value = items.engines;
     document.getElementById('wkey').value = items.wkey;
+    document.getElementById('w3hours').checked = items.w3hours;
     document.getElementById('wlanguage').value = items.wlang;
     document.getElementById('tempc').checked = items.tempc;
     document.getElementById('links').value = items.links;

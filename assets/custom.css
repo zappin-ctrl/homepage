@@ -18,13 +18,13 @@
 }
 
 @keyframes enter-weather {
-  from {
-    left: -100px; opacity: 0;
-  }
+  from { left: -100px; opacity: 0; }
+  100% { left: 10px; opacity: 1; }
+}
 
-  100% {
-    left: 10px; opacity: 1;
-  }
+@keyframes enter-weather-diff {
+  from { transform: translateX(-3.5em); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 
 /* Global */
@@ -192,6 +192,32 @@ a#install-button { color: #fff; }
   display: flex;
   flex-direction: unset;
   margin-bottom: .3em;
+  opacity: 0;
+}
+
+#wtime-container .wdiff:nth-child(1) {
+  animation: enter-weather-diff 1s ease-in-out;
+  animation-delay: 1.0s; animation-fill-mode: forwards;
+}
+
+#wtime-container .wdiff:nth-child(2) {
+  animation: enter-weather-diff 1s ease-in-out;
+  animation-delay: 1.2s; animation-fill-mode: forwards;
+}
+
+#wtime-container .wdiff:nth-child(3) {
+  animation: enter-weather-diff 1s ease-in-out;
+  animation-delay: 1.4s; animation-fill-mode: forwards;
+}
+
+#wtime-container .wdiff:nth-child(4) {
+  animation: enter-weather-diff 1s ease-in-out;
+  animation-delay: 1.6s; animation-fill-mode: forwards;
+}
+
+#wtime-container .wdiff:nth-child(5) {
+  animation: enter-weather-diff 1s ease-in-out;
+  animation-delay: 1.8s; animation-fill-mode: forwards;
 }
 
 .wdiff .text {

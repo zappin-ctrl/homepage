@@ -19,6 +19,32 @@ function getHexTime() {
 }
 
 
+// 3 hour difference creator
+function newWeatherTime(target, items, data) {
+  var element = document.createElement("div");
+  var wlIcon = document.createElement("img");
+  var wlText = document.createElement("p");
+  element.className = "wdiff";
+  wlText.className = "text";
+  wlIcon.className = "icon";
+
+  if (items.tempc == false) {
+    var getTemp = `${Math.round(parseInt(data.main.temp) * (9 / 5) - 459.67)} °F`
+  } else {
+    var getTemp = `${Math.round(parseInt(data.main.temp) - 273.15)} °C`
+  }
+
+  wlIcon.src = wicons[data.weather[0].icon];
+  var getTime = moment.unix(data.dt).format("LT")
+  var getDesc = data.weather[0].description.replace(/^\w/, c => c.toUpperCase())
+  wlText.innerText = `${getTime} - ${getDesc} | ${getTemp}`;
+
+  element.appendChild(wlIcon);
+  element.appendChild(wlText);
+  target.appendChild(element);
+}
+
+
 // Request function
 var http = function (url, callback) {
   if (!window.XMLHttpRequest) return console.log("This browser does not support requests");
@@ -69,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     customfontgoogle: false,
     engines: "google",
     wkey: "",
+    w3hours: false,
     wlang: "en",
     tempc: true,
     hexbg: false,
@@ -127,36 +154,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
           document.getElementById('wcontainer').style.display = "block";
 
-          // Generate new element for each new future time weather
+          // Make all the other time differences if enabled
           var wLater = document.getElementById('wtime-container');
-          function newWeatherTime(data) {
-            var element = document.createElement("div");
-            var wlIcon = document.createElement("img");
-            var wlText = document.createElement("p");
-            element.className = "wdiff";
-            wlText.className = "text";
-            wlIcon.className = "icon";
-
-            if (items.tempc == false) {
-              var getTemp = `${Math.round(parseInt(data.main.temp) * (9 / 5) - 459.67)} °F`
-            } else {
-              var getTemp = `${Math.round(parseInt(data.main.temp) - 273.15)} °C`
+          if (items.w3hours) {
+            for (i = 1; i < 5; i++) {
+              newWeatherTime(wLater, items, r.list[i]);
             }
-
-            wlIcon.src = wicons[data.weather[0].icon];
-            var getTime = moment.unix(data.dt).format("LT")
-            var getDesc = data.weather[0].description.replace(/^\w/, c => c.toUpperCase())
-            wlText.innerText = `${getTime} - ${getDesc} | ${getTemp}`;
-
-            element.appendChild(wlIcon);
-            element.appendChild(wlText);
-            wLater.appendChild(element);
           }
 
-          // Make all the other time differences
-          for (i = 1; i < 5; i++) {
-            newWeatherTime(r.list[i]);
-          }
         })
 
       });
