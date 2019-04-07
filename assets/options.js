@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Weather languages
   for (var i in wlanguages) {
-    console.log(i)
     var option = document.createElement("option");
     option.text = wlanguages[i];
     option.value = i;
