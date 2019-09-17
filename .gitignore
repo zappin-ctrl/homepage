@@ -1,2 +1,10 @@
 # JetBrains IDE folder
 .idea
+
+# NodeJS stuff
+node_modules
+npm-debug.log
+package-lock.json
+
+# My own custom ignore
+*.zip

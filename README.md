@@ -6,7 +6,7 @@
 - [Google Chrome](https://chrome.google.com/webstore/detail/alexflipnotehomepage/apilabeffmpplallenlcommnigaafgfb)
 - [Firefox](https://addons.mozilla.org/addon/alexflipnote-homepage/)
 
-Do you wish for me to add it for a new platform? Make an **issue** and tell me :3
+Do you need more help? Visit my server here: **https://discord.gg/DpxkY3x**
 
 ---
 
@@ -14,6 +14,9 @@ Do you wish for me to add it for a new platform? Make an **issue** and tell me :
 *Google attempts to hide DuckDuckGo, so on Google Chrome, it's kinda hard to find DuckDuckGo without the right link. BUT WITH THE ALEXFLIPNOTE HOMEPAGE!*
 <br>\- DrGrunt#9537
 
+### Requirements (Development)
+- NodeJS
+- Python 3
 
 ### Credits
 - [AlexFlipnote](https://github.com/AlexFlipnote): Main developer

@@ -1,0 +1,8 @@
+{
+  "name": "AlexFlipnote/homepage",
+  "author": "AlexFlipnote",
+  "homepage": "https://alexflipnote.dev/homepage/",
+  "dependencies": {
+    "rollup": "^1.21.4"
+  }
+}
