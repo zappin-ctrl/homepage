@@ -42,7 +42,7 @@ export function getWeather(items, position) {
     // Make all the other time differences if enabled
     var wLater = document.getElementById('wtime-container');
     if (items.w3hours) {
-      for (i = 1; i < 5; i++) {
+      for (var i = 1; i < 5; i++) {
         newWeatherTime(wLater, items, r.list[i]);
       }
     }
