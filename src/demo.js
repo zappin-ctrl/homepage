@@ -1,5 +1,5 @@
 import { isChrome, isFirefox } from "./utils/browser.js"
-import { runClock } from "./_main.js"
+import { runClock, backgroundElement } from "./_main.js"
 
 runClock()
 

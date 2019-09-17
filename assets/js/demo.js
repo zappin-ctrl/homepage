@@ -15,13 +15,14 @@
     requestAnimationFrame(updateDateAndTime);
   }
 
+  var backgroundElement = document.getElementById('js-bg');
+
   function runClock() {  
     // Start updating
     moment.locale(navigator.language);
     updateDateAndTime();
 
     // Set background to a random one
-    var backgroundElement = document.getElementById('js-bg');
     var selected = Math.floor(Math.random() * 31);
 
     backgroundElement.onload = function () {

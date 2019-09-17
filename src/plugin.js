@@ -1,8 +1,8 @@
 import { getWeather } from "./utils/weather.js"
 import { makeLinks } from "./utils/links.js"
-import { runClock } from "./_main.js"
 import { searchengine } from "./utils/lists.js"
 import { timeInHex } from "./utils/timeManager.js"
+import { runClock, backgroundElement } from "./_main.js"
 
 runClock()
 
