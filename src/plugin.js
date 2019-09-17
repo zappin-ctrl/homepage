@@ -37,7 +37,7 @@ chrome.storage.local.get({
   }
 
   if (items.customfont) {
-    addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
+    var addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
     if (items.customfontgoogle) {
       gFont = document.createElement("link");
       gFont.href = "https://fonts.googleapis.com/css?family=" + items.customfont.replace(" ", "+")
@@ -61,7 +61,7 @@ chrome.storage.local.get({
   }
 
   if (items.customcss) {
-    cssEl = document.createElement("style");
+    var cssEl = document.createElement("style");
     cssEl.type = "text/css";
     cssEl.innerText = items.customcss;
     document.head.appendChild(cssEl);

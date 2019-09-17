@@ -26,7 +26,7 @@ function newWeatherTime(target, items, data) {
 }
 
 export function getWeather(items, position) {
-  pos = position.coords;
+  var pos = position.coords;
   http(`https://api.openweathermap.org/data/2.5/forecast?lat=${pos.latitude}&lon=${pos.longitude}&lang=${items.wlang}&APPID=${items.wkey}`, function(r) {
     document.getElementById('wicon').src = wicons[r.list[0].weather[0].icon]
     document.getElementById('wname').innerText = r.city.name

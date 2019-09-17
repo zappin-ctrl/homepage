@@ -71,7 +71,7 @@
   }
 
   function getWeather(items, position) {
-    pos = position.coords;
+    var pos = position.coords;
     http(`https://api.openweathermap.org/data/2.5/forecast?lat=${pos.latitude}&lon=${pos.longitude}&lang=${items.wlang}&APPID=${items.wkey}`, function(r) {
       document.getElementById('wicon').src = wicons[r.list[0].weather[0].icon];
       document.getElementById('wname').innerText = r.city.name;
@@ -219,7 +219,7 @@
     }
 
     if (items.customfont) {
-      addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
+      var addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
       if (items.customfontgoogle) {
         gFont = document.createElement("link");
         gFont.href = "https://fonts.googleapis.com/css?family=" + items.customfont.replace(" ", "+");
@@ -243,7 +243,7 @@
     }
 
     if (items.customcss) {
-      cssEl = document.createElement("style");
+      var cssEl = document.createElement("style");
       cssEl.type = "text/css";
       cssEl.innerText = items.customcss;
       document.head.appendChild(cssEl);
