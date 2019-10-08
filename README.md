@@ -6,6 +6,13 @@
 - [Google Chrome](https://chrome.google.com/webstore/detail/alexflipnotehomepage/apilabeffmpplallenlcommnigaafgfb)
 - [Firefox](https://addons.mozilla.org/addon/alexflipnote-homepage/)
 
+## Edge Beta (Chromium)
+0. If you haven't already, get Edge Beta [here](https://www.microsoftedgeinsider.com/en-us/?form=MD18G6&OCID=MD18G6)
+1. Paste `edge://extensions/` to your browser
+2. Enable ["Allow extensions from other stores"](https://i.alexflipnote.dev/21kV9CU.png)
+3. Download the extension from [chrome web store](https://chrome.google.com/webstore/detail/alexflipnotehomepage/apilabeffmpplallenlcommnigaafgfb) as usual
+4. Enjoy :)
+
 Do you need more help? Visit my server here: **https://discord.gg/DpxkY3x**
 
 ---
