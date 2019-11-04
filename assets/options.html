@@ -14,6 +14,18 @@
 
   textarea { height: 7em; }
   p { margin: 15px 4em; margin-top: 0; }
+  .save-button {
+    position: fixed;
+    bottom: .25em;
+    left: .25em;
+    font-size: 18px;
+  }
+
+  .save-button:active {
+    position: fixed;
+    bottom: .15em;
+    top: inherit;
+  }
   </style>
 </head>
 <body class="highlight">
@@ -110,7 +122,7 @@
       <textarea id="customcss" class="secondary" style="height: 15em; width: 90%;" placeholder="Write some hot CSS in here..."></textarea>
     </div>
 
-    <button id="save">Save</button>
+    <button class="save-button" id="save">Save</button>
   </div>
 
   <div id="modal" class="modal modal--close" style="background: rgba(0, 0, 0, 0.8);">

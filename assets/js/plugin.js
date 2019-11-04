@@ -221,7 +221,7 @@
     if (items.customfont) {
       var addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
       if (items.customfontgoogle) {
-        gFont = document.createElement("link");
+        var gFont = document.createElement("link");
         gFont.href = "https://fonts.googleapis.com/css?family=" + items.customfont.replace(" ", "+");
         gFont.rel = "stylesheet";
         document.head.appendChild(gFont);
