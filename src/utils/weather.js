@@ -28,7 +28,7 @@ function newWeatherTime(target, items, data) {
 export function getWeather(items, position) {
   var pos = position.coords;
   http(`https://api.openweathermap.org/data/2.5/forecast?lat=${pos.latitude}&lon=${pos.longitude}&lang=${items.wlang}&APPID=${items.wkey}`, function(r) {
-    document.getElementById('wicon').src = wicons[r.list[0].weather[0].icon]
+    document.getElementById('wicon').src = "assets/images/weather/" + wicons[r.list[0].weather[0].icon]
     document.getElementById('wname').innerText = r.city.name
     document.getElementById('wdescription').innerText = r.list[0].weather[0].description.replace(/^\w/, c => c.toUpperCase());
     if (items.tempc == false) {

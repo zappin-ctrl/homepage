@@ -26,24 +26,24 @@
   };
 
   var wicons = {
-    '01d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/2600.png',
-    '02d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/26c5.png',
-    '03d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/2601.png',
-    '04d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f327.png',
-    '09d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f327.png',
-    '10d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f326.png',
-    '11d': 'https://cdn.discordapp.com/attachments/132632676225122304/270190320736534538/emoji.png',
-    '13d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f328.png',
-    '50d': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f32b.png',
-    '01n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f311.png',
-    '02n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/26c5.png',
-    '03n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/2601.png',
-    '04n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f327.png',
-    '09n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f327.png',
-    '10n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f326.png',
-    '11n': 'https://cdn.discordapp.com/attachments/132632676225122304/270190320736534538/emoji.png',
-    '13n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f328.png',
-    '50n': 'https://raw.githubusercontent.com/twitter/twemoji/gh-pages/v/12.0.4/72x72/1f32b.png',
+    '01d': '2600.png',
+    '02d': '26c5.png',
+    '03d': '2601.png',
+    '04d': '1f327.png',
+    '09d': '1f327.png',
+    '10d': '1f326.png',
+    '11d': '26c8.png',
+    '13d': '1f328.png',
+    '50d': '1f32b.png',
+    '01n': '1f311.png',
+    '02n': '26c5.png',
+    '03n': '2601.png',
+    '04n': '1f327.png',
+    '09n': '1f327.png',
+    '10n': '1f326.png',
+    '11n': '26c8.png',
+    '13n': '1f328.png',
+    '50n': '1f32b.png',
   };
 
   function newWeatherTime(target, items, data) {
@@ -73,7 +73,7 @@
   function getWeather(items, position) {
     var pos = position.coords;
     http(`https://api.openweathermap.org/data/2.5/forecast?lat=${pos.latitude}&lon=${pos.longitude}&lang=${items.wlang}&APPID=${items.wkey}`, function(r) {
-      document.getElementById('wicon').src = wicons[r.list[0].weather[0].icon];
+      document.getElementById('wicon').src = "assets/images/weather/" + wicons[r.list[0].weather[0].icon];
       document.getElementById('wname').innerText = r.city.name;
       document.getElementById('wdescription').innerText = r.list[0].weather[0].description.replace(/^\w/, c => c.toUpperCase());
       if (items.tempc == false) {
