@@ -15,7 +15,7 @@ function newWeatherTime(target, items, data) {
     var getTemp = `${Math.round(parseInt(data.main.temp) - 273.15)} °C`
   }
 
-  wlIcon.src = wicons[data.weather[0].icon];
+  wlIcon.src = "assets/images/weather/" + wicons[data.weather[0].icon];
   var getTime = moment.unix(data.dt).format("LT")
   var getDesc = data.weather[0].description.replace(/^\w/, c => c.toUpperCase())
   wlText.innerText = `${getTime} - ${getDesc} | ${getTemp}`;

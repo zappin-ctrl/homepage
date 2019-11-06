@@ -5,7 +5,7 @@
   "name": "AlexFlipnote/Homepage",
   "description": "A website that gives you a clean homepage with random backgrounds!",
   "homepage_url": "https://alexflipnote.dev",
-  "version": "1.1.6",
+  "version": "1.1.7",
 
   "chrome_url_overrides": {
     "newtab": "indexPlugin.html"
