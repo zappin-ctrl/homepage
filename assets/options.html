@@ -3,7 +3,7 @@
   <title>Homepage Settings</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <link href="modesta.min.css" type="text/css" rel="stylesheet">
+  <link href="css/modesta.min.css" type="text/css" rel="stylesheet">
   <style>
   textarea, input:not([type="checkbox"]) {
     border: 0;
@@ -25,6 +25,38 @@
     position: fixed;
     bottom: .15em;
     top: inherit;
+  }
+
+  .preview-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .preview-container:hover .preview-image {
+    cursor: pointer;
+    opacity: .4;
+  }
+
+  .preview-container:hover::before {
+    align-items: center;
+    color: #fff;
+    content: "Remove?";
+    display: flex;
+    font-family: monospace;
+    font-size: 32px;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+  }
+
+  #custombg_uploader {
+    background: transparent;
+  }
+
+  #custombg_previews .preview-image {
+    width: 250px; height: 140px;
+    margin: .25em .5em;
   }
   </style>
 </head>
@@ -61,12 +93,12 @@
     <div class="box-container primary-flat no-border-radius">
       <h3 class="no-margin">Custom background URL</h3>
       <p>
-        If you want your own image from PC, upload it <a href="https://imgur.com/" target="_blank">here</a>
-        to get an URL for this extension
-        <br>
-        <span class="sun-flower-text">NOTE:</span> If you want multiple backgrounds, add a new link for each line
+        Upload images that you want as background!
+        <br>Supported formats: JPG, PNG, GIF<br>
+        <span class="sun-flower-text">NOTE:</span> Remember to click "save" when done.
       </p>
-      <textarea id="custombg" class="secondary"></textarea>
+      Select images: <input type="file" id="custombg_uploader" accept="image/png,image/jpeg,image/gif">
+      <div id="custombg_previews"></div>
     </div>
 
     <div class="box-container primary-flat no-border-radius">
@@ -89,6 +121,14 @@
       <p><span class="sun-flower-text">Keep in mind</span>, checking this will disable <b>Custom background URL</b></p>
       <label>
         <input type="checkbox" id="hexbg"> Enable
+      </label>
+    </div>
+
+    <div class="box-container primary-flat no-border-radius">
+      <h3 class="no-margin">Terminal style</h3>
+      <p><span class="sun-flower-text">Keep in mind</span>, checking this will disable <b>Search engine</b> and <b>Custom font</b></p>
+      <label>
+        <input type="checkbox" id="terminal"> Enable
       </label>
     </div>
 

@@ -11,15 +11,17 @@
     <title>Homepage</title>
 
     <!-- Stylesheets -->
-    <link href="assets/modesta.min.css" type="text/css" rel="stylesheet">
-    <link href="assets/custom.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/modesta.min.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/custom.css" type="text/css" rel="stylesheet">
+    <link href="assets/css/terminal.css" type="text/css" rel="stylesheet">
   </head>
 
-  <body>
+  <body id="body">
     <section class="fullscreen noselect">
       <img class="background" id="js-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" draggable="false">
       <div class="center-object">
         <section class="me">
+          <h1 class="time" id="terminal-me" style="display:none;"></h1>
           <h1 class="time" id="js-time" style="letter-spacing: .05em;"></h1>
           <h1 class="time" id="js-date"></h1>
           <form method=GET action="http://www.google.com/search" autocomplete="off" class="form-box" id="formsearch">
@@ -35,8 +37,10 @@
       <img id="wicon" draggable="false">
       <div class="wtext-container">
         <p id="wname">PLACEHOLDER</p>
-        <p id="wdescription">PLACEHOLDER</p>
-        <p id="wtemp">PLACEHOLDER</p>
+        <div class="terminal_break">
+          <p id="wdescription">PLACEHOLDER</p>
+          <p id="wtemp">PLACEHOLDER</p>
+        </div>
       </div>
       <div id="wtime-container"></div>
     </div>

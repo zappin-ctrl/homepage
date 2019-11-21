@@ -1,6 +1,7 @@
 import { getWeather } from "./utils/weather.js"
 import { makeLinks } from "./utils/links.js"
 import { searchengine } from "./utils/lists.js"
+import { runTerminal } from "./utils/terminal.js"
 import { timeInHex } from "./utils/timeManager.js"
 import { runClock, backgroundElement } from "./_main.js"
 
@@ -10,6 +11,7 @@ chrome.storage.local.get({
   language: "",
   custombg: "",
   customfont: "",
+  terminal: false,
   customfontgoogle: false,
   engines: "google",
   wkey: "",
@@ -23,12 +25,11 @@ chrome.storage.local.get({
   customcss: ""
 }, function(items) {
   if (items.custombg.length) {
-    var chooseranbg = items.custombg.split("\n");
-    var chooseranbgindex = Math.floor(Math.random() * chooseranbg.length);
-    backgroundElement.src = chooseranbg[chooseranbgindex];
+    var chooseranbgindex = Math.floor(Math.random() * items.custombg.length)
+    backgroundElement.src = items.custombg[chooseranbgindex]
   }
 
-  if (items.language) { moment.locale(items.language); }
+  if (items.language) { moment.locale(items.language) }
 
   if (items.wkey) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -37,50 +38,60 @@ chrome.storage.local.get({
   }
 
   if (items.customfont) {
-    var addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial';
+    var addFont = '"' + items.customfont + '", "Lato", sans-serif, Arial'
     if (items.customfontgoogle) {
-      var gFont = document.createElement("link");
+      var gFont = document.createElement("link")
       gFont.href = "https://fonts.googleapis.com/css?family=" + items.customfont.replace(" ", "+")
-      gFont.rel = "stylesheet";
-      document.head.appendChild(gFont);
+      gFont.rel = "stylesheet"
+      document.head.appendChild(gFont)
     }
-    document.body.style.fontFamily = addFont;
+    document.body.style.fontFamily = addFont
   }
 
   if (items.hexbg) {
-    backgroundElement.src = "";
+    backgroundElement.src = ""
     timeInHex()
+  }
+
+  if (items.terminal) {
+    if (items.hexbg || !items.custombg.length) { backgroundElement.src = "" }
+    if (items.customfont) { document.body.style.fontFamily = null; }
+    runTerminal()
   }
 
   if (items.engines !== "google") {
     if (items.engines == "none") {
-      document.getElementById('formsearch').style.display = "none";
+      document.getElementById('formsearch').style.display = "none"
     }
-    document.getElementById('formsearch').action = searchengine[items.engines].url;
-    document.getElementById('forminput').placeholder = searchengine[items.engines].holder;
+    document.getElementById('formsearch').action = searchengine[items.engines].url
+    document.getElementById('forminput').placeholder = searchengine[items.engines].holder
   }
 
   if (items.customcss) {
-    var cssEl = document.createElement("style");
-    cssEl.type = "text/css";
-    cssEl.innerText = items.customcss;
-    document.head.appendChild(cssEl);
+    var cssEl = document.createElement("style")
+    cssEl.type = "text/css"
+    cssEl.innerText = items.customcss
+    document.head.appendChild(cssEl)
   }
 
   if (items.links) {
-    makeLinks(items)
+    if (items.terminal) {
+      makeLinks(items, true)
+    } else {
+      makeLinks(items, false)
+    }
   }
 
   if (items.showSettings) {
-    var settings = document.getElementById('settings');
-    settings.removeAttribute('style');
+    var settings = document.getElementById('settings')
+    settings.removeAttribute('style')
     settings.addEventListener('click', function () {
-      chrome.runtime.openOptionsPage();
+      chrome.runtime.openOptionsPage()
     })
   }
 
   if (items.googleapps) {
-    document.getElementById('googleapps').style.display = "block";
-    document.getElementById('googleapps-btn').style.display = "flex";
+    document.getElementById('googleapps').style.display = "block"
+    document.getElementById('googleapps-btn').style.display = "flex"
   }
 })
