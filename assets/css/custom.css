@@ -6,15 +6,8 @@
 
 /* Animation */
 @keyframes enter-page {
-  from {
-    transform: translate(-50%, 40%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
+  from { transform: translate(-50%, 40%); opacity: 0; }
+  100% { transform: translate(-50%, -50%); opacity: 1; }
 }
 
 @keyframes enter-weather {
@@ -310,23 +303,13 @@ a#install-button { color: #fff; }
 }
 
 @keyframes quicklink-enter {
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(calc(100% - 50px));
-  }
+  from { transform: translateX(100%); }
+  to { transform: translateX(calc(100% - 50px)); }
 }
 
 @keyframes quicklink-enter-compact {
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(calc(100% - 39px));
-  }
+  from { transform: translateX(100%); }
+  to { transform: translateX(calc(100% - 39px)); }
 }
 
 
@@ -344,7 +327,7 @@ a#install-button { color: #fff; }
 
 .demoButtons * { font-family: "Lato", sans-serif, Arial; }
 .demoButtons p { margin: 0; }
-.demoButtons ul { margin: 0; padding-left: 30px; }
+.demoButtons ul { margin: 0; padding-left: 30px; cursor: pointer; }
 .demoButtons select {
   align-items: center;
   background-color: #fff;
