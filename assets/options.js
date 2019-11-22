@@ -138,23 +138,31 @@ document.getElementById('custombg_uploader').onchange = function() {
 }
 
 // CustomBG Remover
- document.body.onclick = function (ev) {
-   if (ev.target.getAttribute("class") == "preview-image") {
-     ev.target.remove()
-   }
- }
+document.body.onclick = function (ev) {
+  if (ev.target.getAttribute("class") == "preview-image") {
+    ev.target.remove()
+  }
+}
+
+function custombg_prune() {
+  var custombg_previews = document.getElementById("custombg_previews")
+  while (custombg_previews.firstChild) {
+    custombg_previews.removeChild(custombg_previews.firstChild);
+  }
+}
 
 function createPreview(image, target) {
   var container = document.createElement("div")
-      container.classList.add("preview-container")
+  container.classList.add("preview-container")
 
   var preview = document.createElement("img")
-      preview.classList.add("preview-image")
-      preview.src = image
+  preview.classList.add("preview-image")
+  preview.src = image
 
   container.append(preview) // div -> img
   target.append(container) // div
 }
 
 document.addEventListener('DOMContentLoaded', restore_options)
+document.getElementById('custombg_prune').addEventListener('click', custombg_prune)
 document.getElementById('save').addEventListener('click', save_options)

@@ -23,7 +23,7 @@ Do you need more help? Visit my server here: **https://discord.gg/DpxkY3x**
 
 ### Requirements (Development)
 - NodeJS
-- Python 3
+- Python 3.6 or up
 
 ### Credits
 - [AlexFlipnote](https://github.com/AlexFlipnote): Main developer
