@@ -3,8 +3,8 @@
   "author": "AlexFlipnote",
   "homepage": "https://alexflipnote.dev/homepage/",
   "dependencies": {
+    "jshint": "^2.10.3",
     "rollup": "^1.21.4",
-    "rollup-plugin-terser": "^5.1.2",
-    "jshint": "^2.10.3"
+    "rollup-plugin-terser": "^5.1.2"
   }
 }

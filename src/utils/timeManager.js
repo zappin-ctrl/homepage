@@ -1,3 +1,10 @@
+var format
+chrome.storage.local.get({
+  no_seconds: false
+}, function(items) {
+  format = items.no_seconds ? "LT" : "LTS"
+})
+
 function getViewportDimensions () {
   return {
     w: typeof window.innerWidth === 'number' ? window.innerWidth : document.documentElement && document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth,
@@ -7,7 +14,7 @@ function getViewportDimensions () {
 
 export function updateDateAndTime() {
   var dateString = moment().format('LL'),
-  timeString = moment().format('LTS')
+      timeString = moment().format(format)
 
   document.getElementById('js-date').innerText = dateString
   document.getElementById('js-time').innerText = timeString

@@ -3,6 +3,7 @@ function save_options() {
   var language = document.getElementById('language').value
   var customfont = document.getElementById('customfont').value
   var customfontgoogle = document.getElementById('customfontgoogle').checked
+  var no_seconds = document.getElementById('no_seconds').checked
   var terminal = document.getElementById('terminal').checked
   var hexbg = document.getElementById('hexbg').checked
   var engines = document.getElementById('engines').value
@@ -25,6 +26,7 @@ function save_options() {
     language: language,
     custombg: custombg,
     customfont: customfont,
+    no_seconds: no_seconds,
     customfontgoogle: customfontgoogle,
     terminal: terminal,
     engines: engines,
@@ -58,6 +60,7 @@ function restore_options() {
     custombg: [],
     customfont: "",
     terminal: false,
+    no_seconds: false,
     customfontgoogle: false,
     engines: "google",
     wkey: "",
@@ -73,6 +76,7 @@ function restore_options() {
     document.getElementById('language').value = items.language
     document.getElementById('customfont').value = items.customfont
     document.getElementById('terminal').checked = items.terminal
+    document.getElementById('no_seconds').checked = items.no_seconds
     document.getElementById('customfontgoogle').checked = items.customfontgoogle
     document.getElementById('hexbg').checked = items.hexbg
     document.getElementById('engines').value = items.engines
