@@ -1,9 +1,14 @@
 var format
-chrome.storage.local.get({
-  no_seconds: false
-}, function(items) {
-  format = items.no_seconds ? "LT" : "LTS"
-})
+try {
+  chrome.storage.local.get({
+    no_seconds: false
+  }, function(items) {
+    format = items.no_seconds ? "LT" : "LTS"
+  })
+} catch (e) {
+  console.log("Running on browser, resulting to default values...")
+  format = "LTS"
+}
 
 function getViewportDimensions () {
   return {
