@@ -1,7 +1,8 @@
 export var searchengine = {
   "none": {"url": "none", "holder": "none"},
-  "ddg": {"url": "https://duckduckgo.com", "holder": "Search on DuckDuckGo..."},
   "bing": {"url": "https://www.bing.com/search", "holder": "Search on Bing..."},
+  "ddg": {"url": "https://duckduckgo.com", "holder": "Search on DuckDuckGo..."},
+  "ecosia": {"url": "https://www.ecosia.org/search", "holder": "Search on Ecosia"},
   "searx": {"url": "https://searx.owo.cloud", "holder": "Search on OwO searX..."},
   "yahoo": {"url": "https://search.yahoo.com/search", "holder": "Search on Yahoo..."}
 }
